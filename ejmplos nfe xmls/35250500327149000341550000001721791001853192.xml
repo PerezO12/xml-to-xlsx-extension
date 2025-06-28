@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35250500327149000341550000001721791001853192">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00185319</cNF>
+        <natOp>Venda de mercadoria adquirida ou recebida de terceiros</natOp>
+        <mod>55</mod>
+        <serie>0</serie>
+        <nNF>172179</nNF>
+        <dhEmi>2025-05-02T11:21:19-03:00</dhEmi>
+        <dhSaiEnt>2025-05-05T00:00:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3552502</cMunFG>
+        <tpImp>2</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>2</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>MercanteWeb NFe v4.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>00327149000341</CNPJ>
+        <xNome>Neon Comercial Reagentes Analíticos Ltda</xNome>
+        <xFant>Neon Filial</xFant>
+        <enderEmit>
+          <xLgr>Rua Ernesto Joaquim de Souza</xLgr>
+          <nro>575</nro>
+          <xBairro>Chácara Primavera</xBairro>
+          <cMun>3552502</cMun>
+          <xMun>Suzano</xMun>
+          <UF>SP</UF>
+          <CEP>08655805</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1122199999</fone>
+        </enderEmit>
+        <IE>672313766110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>52736949001987</CNPJ>
+        <xNome>Sylvamo do Brasil Ltda</xNome>
+        <enderDest>
+          <xLgr>Rodovia SP 255 KM 41,240</xLgr>
+          <nro>S/N</nro>
+          <xBairro>Várzea do Genipapo</xBairro>
+          <cMun>3527603</cMun>
+          <xMun>Luís Antônio</xMun>
+          <UF>SP</UF>
+          <CEP>14210000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1639869120</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>424058527115</IE>
+        <email>ana.costa@sylvamo.com</email>
+      </dest>
+      <entrega>
+        <CNPJ>52736949001987</CNPJ>
+        <xLgr>Rodovia SP 255 KM 41,240</xLgr>
+        <nro>S/N</nro>
+        <xBairro>Várzea do Genipapo</xBairro>
+        <cMun>3527603</cMun>
+        <xMun>Luís Antônio</xMun>
+        <UF>SP</UF>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>02412</cProd>
+          <cEAN>7898515950032</cEAN>
+          <xProd>Tiossulfato de Sódio Pentahidratado P.A./ACS 500 g Lt:74526 Vl:22/09/28</xProd>
+          <NCM>28323020</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>fc</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>34.6300000000</vUnCom>
+          <vProd>69.26</vProd>
+          <cEANTrib>7898515950032</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>34.6300000000</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>16099607</xPed>
+          <nItemPed>2</nItemPed>
+          <rastro>
+            <nLote>74526</nLote>
+            <qLote>2.000</qLote>
+            <dFab>2023-09-24</dFab>
+            <dVal>2028-09-22</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>1</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>69.26</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>12.47</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>340</cEnq>
+            <IPINT>
+              <CST>52</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>56.79</vBC>
+              <pPIS>0.6500</pPIS>
+              <vPIS>0.37</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>56.79</vBC>
+              <pCOFINS>3.0000</pCOFINS>
+              <vCOFINS>1.70</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>4426</cProd>
+          <cEAN>7898515963599</cEAN>
+          <xProd>4 - Solução Sulfocrômica Forte 1000 mL Lt:67438 Vl:26/04/27</xProd>
+          <NCM>29051999</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>L</uCom>
+          <qCom>4.0000</qCom>
+          <vUnCom>29.0000000000</vUnCom>
+          <vProd>116.00</vProd>
+          <cEANTrib>7898515963599</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>4.0000</qTrib>
+          <vUnTrib>29.0000000000</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>16099607</xPed>
+          <nItemPed>1</nItemPed>
+          <rastro>
+            <nLote>67438</nLote>
+            <qLote>4.000</qLote>
+            <dFab>2023-04-27</dFab>
+            <dVal>2027-04-26</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>116.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>20.88</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>340</cEnq>
+            <IPINT>
+              <CST>52</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>95.12</vBC>
+              <pPIS>0.6500</pPIS>
+              <vPIS>0.62</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>95.12</vBC>
+              <pCOFINS>3.0000</pCOFINS>
+              <vCOFINS>2.85</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>UN 2922 LÍQUIDO CORROSIVO, TÓXICO, N.E. QUANT. LTDA 8(6.1) II Informações para Mapa da Policia Federal: Ácido Sulfúrico 77%; Dicromato de Potássio 4%, densidade 1.00 Kg/L</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>185.26</vBC>
+          <vICMS>33.35</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>185.26</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.99</vPIS>
+          <vCOFINS>4.55</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>185.26</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>1</modFrete>
+        <transporta>
+          <CNPJ>54237698001245</CNPJ>
+          <xNome>C T M - Comercio e Transporte Matielo Ltda</xNome>
+          <IE>796459576112</IE>
+          <xEnder>Avenida Serra Branca, 372 Antigo 344 - Cidade Industrial Sat</xEnder>
+          <xMun>Guarulhos</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <pesoL>5.000</pesoL>
+          <pesoB>7.364</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>172179</nFat>
+          <vOrig>185.26</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>185.26</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-07-01</dVenc>
+          <vDup>185.26</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>14</tPag>
+          <vPag>185.26</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Pedido nro.: 185319|Cod.Cliente: 998|Colaborador: Sp Interior 4 - Matheus|Seu Pedido (Ordem de Compra): 16099607 solicitado por Ana Costa via E-mail.|Levar à Transportadora|Telefone da Transportadora: (11)2085-0353.|Horário de recebimento na transportadora início às 08:00hrs da manhã.   Almoço das 11:30HS às 13:00HS  Fim do expediente às 17:30HS.|Lei da Transparência (12.741) - Valor Aproximado de Tributos $45.11 (24.35%) Fonte: IBPT.|||OBS:Horário de recebimento na transportadora início às 08:00hrs da manhã.  Almoço das 11:30HS às 13:00HS Fim do expediente às 17:30HS.|Declaro que os produtos perigosos estão adequadamente classificados, embalados, identificados e estivados para suportar os riscos das operações de transporte e que atendem às exigências da Regulamentação.</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35250500327149000341550000001721791001853192">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>0ZUSDb2rhbXYkAx/Qdq6/cnD2CA=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>TWQr50XFmyNiPX6A5i4vrtK3pBZTe/NSc+D9gbRdtb5Mh6FuI1sS/JSjv7umDwjzSL3HSgfqMInEGgXaxTgB1g+pQtxNn2ISmXlsv4HCrANuidEbS+SBzpYKmTu73V7jBLCcxNIAbGDn6ArK4IIpDmjbfnhJubyXtJc8I4DINm16Yl88f5OPqmnMvXr/J2DxiIWo8cR1zM+wC5EOJPONmoJzazI2/5CSxbyzrrUvBNMP2VyfC04wL2c/Sd5yHtGCH1UBJYZ5GFPOJ1BwL2FOy9t4fFEP4de1S52SzBtu2CTSiL7TvCUaNAo6VyXXEy0mjT9j2NppJcCGvS8+39V9Yg==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35250500327149000341550000001721791001853192</chNFe>
+      <dhRecbto>2025-05-02T11:21:21-03:00</dhRecbto>
+      <nProt>135251153689852</nProt>
+      <digVal>0ZUSDb2rhbXYkAx/Qdq6/cnD2CA=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35250500327149000341550000001721681000009068">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00000906</cNF>
+        <natOp>Remessa de mercadoria por conta e ordem de terceiros, em ven</natOp>
+        <mod>55</mod>
+        <serie>0</serie>
+        <nNF>172168</nNF>
+        <dhEmi>2025-05-02T10:41:32-03:00</dhEmi>
+        <dhSaiEnt>2025-05-02T10:41:32-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3552502</cMunFG>
+        <tpImp>2</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>8</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>1.0.0.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>00327149000341</CNPJ>
+        <xNome>Neon Comercial Reagentes Analiticos Ltda</xNome>
+        <xFant>Neon Filial</xFant>
+        <enderEmit>
+          <xLgr>Rua Ernesto Joaquim de Souza</xLgr>
+          <nro>575</nro>
+          <xBairro>Chacara Primavera</xBairro>
+          <cMun>3552502</cMun>
+          <xMun>Suzano</xMun>
+          <UF>SP</UF>
+          <CEP>08655805</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1122199999</fone>
+        </enderEmit>
+        <IE>672313766110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>10635424000852</CNPJ>
+        <xNome>Instituto Federal de Educacao Ciencia e Tecnologia Catarinen</xNome>
+        <enderDest>
+          <xLgr>Rua Vigario Frei Joao</xLgr>
+          <nro>550</nro>
+          <xBairro>Centro</xBairro>
+          <cMun>4210035</cMun>
+          <xMun>Luzerna</xMun>
+          <UF>SC</UF>
+          <CEP>89609000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4935234300</fone>
+        </enderDest>
+        <indIEDest>9</indIEDest>
+      </dest>
+      <entrega>
+        <CNPJ>10635424000852</CNPJ>
+        <xLgr>Rua Vigario Frei Joao</xLgr>
+        <nro>550</nro>
+        <xBairro>Centro</xBairro>
+        <cMun>4210035</cMun>
+        <xMun>Luzerna</xMun>
+        <UF>SC</UF>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>02595</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>12 - Acetona P.A./ACS 1000 mL Lt:78180</xProd>
+          <NCM>29141100</NCM>
+          <CFOP>6923</CFOP>
+          <uCom>fc</uCom>
+          <qCom>12.0000</qCom>
+          <vUnCom>47.2000</vUnCom>
+          <vProd>566.40</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>12.0000</qTrib>
+          <vUnTrib>47.2000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>566.40</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>566.40</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>81560047000705</CNPJ>
+          <xNome>Aceville Transportes Ltda</xNome>
+          <IE>336728930119</IE>
+          <xEnder>Avenida Narain Singh, 1300 Galpao 01</xEnder>
+          <xMun>Guarulhos</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <pesoL>9.492</pesoL>
+          <pesoB>15.600</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Telefone da Transportadora: (11)2085-7233.|OBS:Imposto destacado na NFE de venda N° 172166 emissao 02/05/2025 , conforme artigo 129, paragrafo 2º, item 2, alinea b do RICMS/SP.Projeto: 642023 - IFC 102/2023 - PROJETO DE PRESTACAO DE SERVICO E DESENVOLVIMENTO PARA APLICACAO DO ARRANJO - Pedido Compra: 030946 FUNDACAO DE AMPARO A PESQUISA E EXTENSAO UNIVERSITARIA - Rua Delfino Conti, S/N - Campus Universitario - Trindade - CNPJ: 83.476.911/0001-17 - Ins. Estadual: ISENTO.  A/C: Mario Wolfart Junior (49) 3523-4301 (49) 99111-3464 ENDERECO DE EN.|Declaro que os produtos perigosos estao adequadamente classificados, embalados, identificados e estivados para suportar os riscos das operacoes de transporte e que atendem as exigencias da Regulamentacao.</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35250500327149000341550000001721681000009068">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>S1sHplCOOeFluXx5+3CsupgvmCY=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>h0+jHfErzjhHhwELB3WOQ7aZlJHCgPYo9EzbwO0S4OwoGQmzZ/i8Iphay+LWSgN11YRZEC6Ylu5uqL0oHqW6d4jbY6HtuGgYNJ7ln2CVOoEVGIy4rEJXb1VzUUvTchcHDdVS3rM639AEUbB9j9v/UXPgCmFtUlsnzctEkSM86i0jgYDc9qxhuJJypOkH4cb+a6JhKTNhSYWzbQ6SUcDZ0BQf6Qwi6HbTA+16zLjjdsLfSH8tUuV0hRBmxulH1jQTzskQ+J/JyIWPMNCI0dqUvouBUJ6A9K1TdRAYsU8mVy0PoZwrmQIFJeF7w1I/FvTIDoOg0sBMvvwPIje7KYu+Pw==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35250500327149000341550000001721681000009068</chNFe>
+      <dhRecbto>2025-05-02T10:41:33-03:00</dhRecbto>
+      <nProt>135251153142462</nProt>
+      <digVal>S1sHplCOOeFluXx5+3CsupgvmCY=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

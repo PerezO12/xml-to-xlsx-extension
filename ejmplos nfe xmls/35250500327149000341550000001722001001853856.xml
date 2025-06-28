@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35250500327149000341550000001722001001853856">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00185385</cNF>
+        <natOp>Venda de mercadoria adquirida ou recebida de terceiros</natOp>
+        <mod>55</mod>
+        <serie>0</serie>
+        <nNF>172200</nNF>
+        <dhEmi>2025-05-02T12:28:52-03:00</dhEmi>
+        <dhSaiEnt>2025-05-02T12:28:52-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3552502</cMunFG>
+        <tpImp>2</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>6</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>MercanteWeb NFe v4.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>00327149000341</CNPJ>
+        <xNome>Neon Comercial Reagentes Analíticos Ltda</xNome>
+        <xFant>Neon Filial</xFant>
+        <enderEmit>
+          <xLgr>Rua Ernesto Joaquim de Souza</xLgr>
+          <nro>575</nro>
+          <xBairro>Chácara Primavera</xBairro>
+          <cMun>3552502</cMun>
+          <xMun>Suzano</xMun>
+          <UF>SP</UF>
+          <CEP>08655805</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1122199999</fone>
+        </enderEmit>
+        <IE>672313766110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CPF>17716357972</CPF>
+        <xNome>Jan Haasjes</xNome>
+        <enderDest>
+          <xLgr>Chacara Marujo - Colonia Castrolanda</xLgr>
+          <nro>0</nro>
+          <xCpl>Caixa Postal 131</xCpl>
+          <xBairro>Colonia Castrolanda</xBairro>
+          <cMun>4104907</cMun>
+          <xMun>Castro</xMun>
+          <UF>PR</UF>
+          <CEP>84196200</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4232341430</fone>
+        </enderDest>
+        <indIEDest>9</indIEDest>
+        <email>comercial@chacaramarujo.com.br</email>
+      </dest>
+      <entrega>
+        <CPF>17716357972</CPF>
+        <xLgr>Chacara Marujo - Colonia Castrolanda</xLgr>
+        <nro>0</nro>
+        <xCpl>Caixa Postal 131</xCpl>
+        <xBairro>Colonia Castrolanda</xBairro>
+        <cMun>4104907</cMun>
+        <xMun>Castro</xMun>
+        <UF>PR</UF>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>00162</cProd>
+          <cEAN>7898515950698</cEAN>
+          <xProd>1 - Ácido Bórico P.A. 250 g Lt:74414 Vl:14/03/29</xProd>
+          <NCM>28100010</NCM>
+          <CFOP>6102</CFOP>
+          <uCom>Kg</uCom>
+          <qCom>0.2500</qCom>
+          <vUnCom>89.2000000000</vUnCom>
+          <vProd>22.30</vProd>
+          <cEANTrib>7898515950698</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>22.3000000000</vUnTrib>
+          <vFrete>248.41</vFrete>
+          <indTot>1</indTot>
+          <rastro>
+            <nLote>74414</nLote>
+            <qLote>1.000</qLote>
+            <dFab>2024-03-15</dFab>
+            <dVal>2029-03-14</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>2</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>270.71</vBC>
+              <pICMS>4.0000</pICMS>
+              <vICMS>10.83</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>340</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>21.41</vBC>
+              <pPIS>0.6500</pPIS>
+              <vPIS>0.14</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>21.41</vBC>
+              <pCOFINS>3.0000</pCOFINS>
+              <vCOFINS>0.64</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+          <ICMSUFDest>
+            <vBCUFDest>270.71</vBCUFDest>
+            <vBCFCPUFDest>270.71</vBCFCPUFDest>
+            <pICMSUFDest>18.0000</pICMSUFDest>
+            <pICMSInter>4.00</pICMSInter>
+            <pICMSInterPart>100.0000</pICMSInterPart>
+            <vICMSUFDest>37.90</vICMSUFDest>
+            <vICMSUFRemet>0.00</vICMSUFRemet>
+          </ICMSUFDest>
+        </imposto>
+        <infAdProd>. Informações para Mapa da Policia Federal: Ácido Bórico 99%, densidade 1.44 Kg/L</infAdProd>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>4342</cProd>
+          <cEAN>7898515950711</cEAN>
+          <xProd>Ácido Bórico em Solução 4% 1000 mL Lt:76503 Vl:05/11/26</xProd>
+          <NCM>28100010</NCM>
+          <CFOP>6102</CFOP>
+          <uCom>fc</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>17.4000000000</vUnCom>
+          <vProd>174.00</vProd>
+          <cEANTrib>7898515950711</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>17.4000000000</vUnTrib>
+          <indTot>1</indTot>
+          <rastro>
+            <nLote>76503</nLote>
+            <qLote>10.000</qLote>
+            <dFab>2024-11-05</dFab>
+            <dVal>2026-11-05</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>2</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>174.00</vBC>
+              <pICMS>4.0000</pICMS>
+              <vICMS>6.96</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>340</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>167.04</vBC>
+              <pPIS>0.6500</pPIS>
+              <vPIS>1.09</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>167.04</vBC>
+              <pCOFINS>3.0000</pCOFINS>
+              <vCOFINS>5.01</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+          <ICMSUFDest>
+            <vBCUFDest>174.00</vBCUFDest>
+            <vBCFCPUFDest>174.00</vBCFCPUFDest>
+            <pICMSUFDest>18.0000</pICMSUFDest>
+            <pICMSInter>4.00</pICMSInter>
+            <pICMSInterPart>100.0000</pICMSInterPart>
+            <vICMSUFDest>24.36</vICMSUFDest>
+            <vICMSUFRemet>0.00</vICMSUFRemet>
+          </ICMSUFDest>
+        </imposto>
+        <infAdProd>.</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>444.71</vBC>
+          <vICMS>17.79</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vICMSUFDest>62.26</vICMSUFDest>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>196.30</vProd>
+          <vFrete>248.41</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>1.23</vPIS>
+          <vCOFINS>5.65</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>444.71</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>82110818000393</CNPJ>
+          <xNome>Alfa Transportes Ltda</xNome>
+          <IE>336829364119</IE>
+          <xEnder>Rua Antônio Utrilla, 349  - Cidade Industrial Satélite de Sã</xEnder>
+          <xMun>Guarulhos</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <pesoL>10.250</pesoL>
+          <pesoB>11.300</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>172200</nFat>
+          <vOrig>444.71</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>444.71</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-05-30</dVenc>
+          <vDup>444.71</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>14</tPag>
+          <vPag>444.71</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Pedido nro.: 185385|Cod.Cliente: 4608|Colaborador: Parana|Cliente Retira|Telefone da Transportadora: (11)2595-0880.|.|Lei da Transparência (12.741) - Valor Aproximado de Tributos $72.92 (37.15%) Fonte: IBPT.||</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35250500327149000341550000001722001001853856">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>KfEh1u/ZnGZz2x31i9kEf2IllIQ=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>YVgfP6DMC81/Jc6oi/WunsmxVM7FsbVOazcciT14flQUbgGkx1DUIerk/Vz8Q6X84KMiDr78gturjKIDe00cg+5hArpUuMC+D5EfdaCbN7KzL+hx7eKVQFAwYl/yjmgMkwXu6Ah0UCPUVm2rV9mWsn0r2Xxk9yDdxI3zDzADjn4niNK5twx9gu/ujpN2ck/fSFaOvAtHs+S4qf21ecyyRfkVRwBHI5l0So7wJ1SSArSOnDhpzhVzMKaVl+YwEuDJ+vyDgE50cYDiydaW5HNjwCWfMDaPEeOCCex0vvJtZ2x6utx/XFY7unfWKtKK1J4IvZd9+Pd8p/27O4TqagybwA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35250500327149000341550000001722001001853856</chNFe>
+      <dhRecbto>2025-05-02T12:28:55-03:00</dhRecbto>
+      <nProt>135251154549347</nProt>
+      <digVal>KfEh1u/ZnGZz2x31i9kEf2IllIQ=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

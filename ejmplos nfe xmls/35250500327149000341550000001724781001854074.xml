@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35250500327149000341550000001724781001854074">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00185407</cNF>
+        <natOp>Venda de mercadoria adquirida ou recebida de terceiros</natOp>
+        <mod>55</mod>
+        <serie>0</serie>
+        <nNF>172478</nNF>
+        <dhEmi>2025-05-07T16:31:25-03:00</dhEmi>
+        <dhSaiEnt>2025-05-08T00:00:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3552502</cMunFG>
+        <tpImp>2</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>4</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>MercanteWeb NFe v4.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>00327149000341</CNPJ>
+        <xNome>Neon Comercial Reagentes Analíticos Ltda</xNome>
+        <xFant>Neon Filial</xFant>
+        <enderEmit>
+          <xLgr>Rua Ernesto Joaquim de Souza</xLgr>
+          <nro>575</nro>
+          <xBairro>Chácara Primavera</xBairro>
+          <cMun>3552502</cMun>
+          <xMun>Suzano</xMun>
+          <UF>SP</UF>
+          <CEP>08655805</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1122199999</fone>
+        </enderEmit>
+        <IE>672313766110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>83052407000351</CNPJ>
+        <xNome>Fecoagro Federacao das Cooperativas Agropecuarias do Estado</xNome>
+        <enderDest>
+          <xLgr>Rod Olivio Nobrega</xLgr>
+          <nro>S/N</nro>
+          <xBairro>Rocio Grande</xBairro>
+          <cMun>4216206</cMun>
+          <xMun>São Francisco do Sul</xMun>
+          <UF>SC</UF>
+          <CEP>89240000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4732330020</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>254505333</IE>
+        <email>compras@fecoagro.coop.br</email>
+      </dest>
+      <entrega>
+        <CNPJ>83052407000351</CNPJ>
+        <xLgr>Rod Olivio Nobrega</xLgr>
+        <nro>S/N</nro>
+        <xBairro>Rocio Grande</xBairro>
+        <cMun>4216206</cMun>
+        <xMun>São Francisco do Sul</xMun>
+        <UF>SC</UF>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>02618</cProd>
+          <cEAN>7898515950827</cEAN>
+          <xProd>5 - Ácido Clorídrico 37% P.A./ACS 1000 mL Lt:78563 Vl:24/03/29</xProd>
+          <NCM>28061020</NCM>
+          <CFOP>6102</CFOP>
+          <uCom>L</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>32.3000000000</vUnCom>
+          <vProd>161.50</vProd>
+          <cEANTrib>7898515950827</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>32.3000000000</vUnTrib>
+          <vFrete>99.15</vFrete>
+          <indTot>1</indTot>
+          <rastro>
+            <nLote>78563</nLote>
+            <qLote>5.000</qLote>
+            <dFab>2025-03-25</dFab>
+            <dVal>2029-03-24</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>260.65</vBC>
+              <pICMS>12.0000</pICMS>
+              <vICMS>31.28</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>340</cEnq>
+            <IPINT>
+              <CST>52</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>142.12</vBC>
+              <pPIS>0.6500</pPIS>
+              <vPIS>0.92</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>142.12</vBC>
+              <pCOFINS>3.0000</pCOFINS>
+              <vCOFINS>4.26</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>UN 1789 ÁCIDO CLORÍDRICO QUANT. LTDA 8 II Informações para Mapa da Policia Federal: Ácido Clorídrico 37%, densidade 1,19 Kg/L</infAdProd>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>00286</cProd>
+          <cEAN>7898515951718</cEAN>
+          <xProd>Ácido Nítrico 65% P.A./ACS 1000 mL Lt:78718 Vl:30/03/29</xProd>
+          <NCM>28080010</NCM>
+          <CFOP>6102</CFOP>
+          <uCom>fc</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>62.4000000000</vUnCom>
+          <vProd>312.00</vProd>
+          <cEANTrib>7898515951718</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>62.4000000000</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>310.618</xPed>
+          <nItemPed>1</nItemPed>
+          <rastro>
+            <nLote>78718</nLote>
+            <qLote>5.000</qLote>
+            <dFab>2025-03-31</dFab>
+            <dVal>2029-03-30</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>312.00</vBC>
+              <pICMS>12.0000</pICMS>
+              <vICMS>37.44</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>340</cEnq>
+            <IPINT>
+              <CST>52</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>274.56</vBC>
+              <pPIS>0.6500</pPIS>
+              <vPIS>1.78</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>274.56</vBC>
+              <pCOFINS>3.0000</pCOFINS>
+              <vCOFINS>8.24</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>UN 2031 ÁCIDO NÍTRICO QUANT. LTDA 8(5.1) II</infAdProd>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>01706</cProd>
+          <cEAN>7898515955990</cEAN>
+          <xProd>Óxido de Lantânio III 99,9% P.A. 100 g Lt:72828 Vl:08/07/29</xProd>
+          <NCM>28469090</NCM>
+          <CFOP>6102</CFOP>
+          <uCom>fc</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>499.0000000000</vUnCom>
+          <vProd>998.00</vProd>
+          <cEANTrib>7898515955990</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>499.0000000000</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>310.618</xPed>
+          <nItemPed>3</nItemPed>
+          <rastro>
+            <nLote>72828</nLote>
+            <qLote>2.000</qLote>
+            <dFab>2023-07-10</dFab>
+            <dVal>2029-07-08</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>6</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>998.00</vBC>
+              <pICMS>12.0000</pICMS>
+              <vICMS>119.76</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>340</cEnq>
+            <IPINT>
+              <CST>52</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>878.24</vBC>
+              <pPIS>0.6500</pPIS>
+              <vPIS>5.71</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>878.24</vBC>
+              <pCOFINS>3.0000</pCOFINS>
+              <vCOFINS>26.35</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>1570.65</vBC>
+          <vICMS>188.48</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>1471.50</vProd>
+          <vFrete>99.15</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>8.41</vPIS>
+          <vCOFINS>38.85</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>1570.65</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>81560047000101</CNPJ>
+          <xNome>Aceville Transportes Ltda</xNome>
+          <IE>251933067</IE>
+          <xEnder>Rodovia BR-101, s/n Km 30 - Rio Bonito (Piraberaba)</xEnder>
+          <xMun>Joinville</xMun>
+          <UF>SC</UF>
+        </transporta>
+        <vol>
+          <qVol>2</qVol>
+          <pesoL>13.150</pesoL>
+          <pesoB>17.580</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>172478</nFat>
+          <vOrig>1570.65</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>1570.65</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-06-04</dVenc>
+          <vDup>1570.65</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>14</tPag>
+          <vPag>1570.65</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Pedido nro.: 185407|Cod.Cliente: 8775|Colaborador: RS / SC - Greice Costa|Seu Pedido (Ordem de Compra): 310.618 solicitado por Gilmar Gabriel Barbosa Oliveira via Website.|Levar à Transportadora|Telefone da Transportadora: (11)2085-7233.|.|Lei da Transparência (12.741) - Valor Aproximado de Tributos $462.78 (31.45%) Fonte: IBPT.|||Declaro que os produtos perigosos estão adequadamente classificados, embalados, identificados e estivados para suportar os riscos das operações de transporte e que atendem às exigências da Regulamentação.</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35250500327149000341550000001724781001854074">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>DFFYW70d9qWNn64jxw2kcGBfF1Y=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>bJ5yktLgk6WbSCvhuHc4zZlXak3wsfB0cQ14Qap2w43wcSiv54WbEqfbtDXuM9Gz9045ipChKCpBpgllZZiX2/0Ag2zYhnVt++Wal/f1cbz+5+iTVA7AakB4sgoUGXURuvKij3wRmAUJUZxN+qJ9dCIX7JTi/BQP3xLhgghv5zAiRr0DP/1qJVGrPU+/v9ylm5yC+bFYIZPVxWK/cwnl4ZkK7ZTz1gKU3piDlMWQZShLN7uxsxOuxuA2Mb/4WyYbC19hQjIwqPLJbcrQRZvGllIUqA/OZolZrNnrfcSIU93BzAOoNbB2QhUH7WH7VAGfSU5B+lBKlJMzvvyDK1iazA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35250500327149000341550000001724781001854074</chNFe>
+      <dhRecbto>2025-05-07T16:31:27-03:00</dhRecbto>
+      <nProt>135251209278465</nProt>
+      <digVal>DFFYW70d9qWNn64jxw2kcGBfF1Y=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

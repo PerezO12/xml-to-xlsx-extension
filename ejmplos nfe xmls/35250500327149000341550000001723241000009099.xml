@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35250500327149000341550000001723241000009099">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00000909</cNF>
+        <natOp>Remessa de vasilhame ou sacaria</natOp>
+        <mod>55</mod>
+        <serie>0</serie>
+        <nNF>172324</nNF>
+        <dhEmi>2025-05-05T21:54:33-03:00</dhEmi>
+        <dhSaiEnt>2025-05-05T21:54:33-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3552502</cMunFG>
+        <tpImp>2</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>9</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>1.0.0.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>00327149000341</CNPJ>
+        <xNome>Neon Comercial Reagentes Analiticos Ltda</xNome>
+        <xFant>Neon Filial</xFant>
+        <enderEmit>
+          <xLgr>Rua Ernesto Joaquim de Souza</xLgr>
+          <nro>575</nro>
+          <xBairro>Chacara Primavera</xBairro>
+          <cMun>3552502</cMun>
+          <xMun>Suzano</xMun>
+          <UF>SP</UF>
+          <CEP>08655805</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1122199999</fone>
+        </enderEmit>
+        <IE>672313766110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>00489050000184</CNPJ>
+        <xNome>JJGC Industria e Comercio de Materiais Dentarios SA</xNome>
+        <enderDest>
+          <xLgr>Avenida Juscelino Kubitschek de Oliveira</xLgr>
+          <nro>3291</nro>
+          <xBairro>Cidade Industrial</xBairro>
+          <cMun>4106902</cMun>
+          <xMun>Curitiba</xMun>
+          <UF>PR</UF>
+          <CEP>81270200</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4121694000</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>1000400269</IE>
+      </dest>
+      <entrega>
+        <CNPJ>00489050000184</CNPJ>
+        <xLgr>Avenida Juscelino Kubitschek de Oliveira</xLgr>
+        <nro>3291</nro>
+        <xBairro>Cidade Industrial</xBairro>
+        <cMun>4106902</cMun>
+        <xMun>Curitiba</xMun>
+        <UF>PR</UF>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>A25</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>Frasco Quimio Ambar 1100 mL Lt:1</xProd>
+          <NCM>70109011</NCM>
+          <CFOP>6920</CFOP>
+          <uCom>un</uCom>
+          <qCom>420.0000</qCom>
+          <vUnCom>0.1000</vUnCom>
+          <vProd>42.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>un</uTrib>
+          <qTrib>420.0000</qTrib>
+          <vUnTrib>0.1000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>40</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>42.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>42.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>3</modFrete>
+        <transporta>
+          <CNPJ>00327149000341</CNPJ>
+          <xNome>Neon Comercial Reagentes Analiticos Ltda</xNome>
+          <IE>672313766110</IE>
+          <xEnder>Rua Ernesto Joaquim de Souza, 575</xEnder>
+          <xMun>Suzano</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>70</qVol>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Suspensao do IPI nos termos do Art. 36 Inciso 2 do decreto 87981 / 82 do RIPI.Suspensao do ICMS nos termos do Art. 382 Inciso 2 do decreto 33118 / 91 do RICMS|OBS:Frasco de vidro referente NF Nro.:172228.</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35250500327149000341550000001723241000009099">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>kqwVhcpFmDJdheIh+faBwx1OqO8=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>aIqRmel94PqnMMbQeAl4ko1CLrAbAFzHbAPFBqSjt7B/mVyJ0MD5+qPxF9WbFUd56LL8pMOoFv0JcaHGkCiZlvRev198zxYfv5lbU8ySM1idBVulsP8JYQWH3hgDVVJSMFyLjkmyLJGOA/1F7AgUtOqu81q0aFIof64JtLAS3mthc6gCRkirGj0nLQNf0Be61nGwvRp6x3DPigz4IC+EEAnt3ZkrVK4fxGbjllZDSuTNVl2IsgponrooWTprz2OsY6YiYZtF/O9DWd7VP3aGF08ioK8xShB7jc+T6M2lUO7JAyM1WtBo8nZbbGC23SWzxYhUL2yKqAgvVsY6RIWDfg==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35250500327149000341550000001723241000009099</chNFe>
+      <dhRecbto>2025-05-05T21:54:35-03:00</dhRecbto>
+      <nProt>135251186152534</nProt>
+      <digVal>kqwVhcpFmDJdheIh+faBwx1OqO8=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

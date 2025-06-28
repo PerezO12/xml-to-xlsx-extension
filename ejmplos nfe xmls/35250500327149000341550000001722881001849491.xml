@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35250500327149000341550000001722881001849491">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00184949</cNF>
+        <natOp>Remessa de amostra grátis</natOp>
+        <mod>55</mod>
+        <serie>0</serie>
+        <nNF>172288</nNF>
+        <dhEmi>2025-05-05T14:21:08-03:00</dhEmi>
+        <dhSaiEnt>2025-05-06T00:00:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3552502</cMunFG>
+        <tpImp>2</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>1</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>MercanteWeb NFe v4.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>00327149000341</CNPJ>
+        <xNome>Neon Comercial Reagentes Analíticos Ltda</xNome>
+        <xFant>Neon Filial</xFant>
+        <enderEmit>
+          <xLgr>Rua Ernesto Joaquim de Souza</xLgr>
+          <nro>575</nro>
+          <xBairro>Chácara Primavera</xBairro>
+          <cMun>3552502</cMun>
+          <xMun>Suzano</xMun>
+          <UF>SP</UF>
+          <CEP>08655805</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1122199999</fone>
+        </enderEmit>
+        <IE>672313766110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>02464838000161</CNPJ>
+        <xNome>Ceq Especialidades Quimicas Ltda</xNome>
+        <enderDest>
+          <xLgr>Rua Panambi</xLgr>
+          <nro>719</nro>
+          <xBairro>Cidade Industrial Satélite de São Paulo</xBairro>
+          <cMun>3518800</cMun>
+          <xMun>Guarulhos</xMun>
+          <UF>SP</UF>
+          <CEP>07224130</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1124135000</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>796316232117</IE>
+        <email>michelle.ramos@petsociety.com.br</email>
+      </dest>
+      <entrega>
+        <CNPJ>02464838000161</CNPJ>
+        <xLgr>Rua Panambi</xLgr>
+        <nro>719</nro>
+        <xBairro>Cidade Industrial Satélite de São Paulo</xBairro>
+        <cMun>3518800</cMun>
+        <xMun>Guarulhos</xMun>
+        <UF>SP</UF>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>00495</cProd>
+          <cEAN>7898515952173</cEAN>
+          <xProd>Álcool Metílico P.A. 1000 mL Lt:78157 Vl:12/02/30</xProd>
+          <NCM>29051100</NCM>
+          <CFOP>5911</CFOP>
+          <uCom>fc</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>1.0000000000</vUnCom>
+          <vProd>1.00</vProd>
+          <cEANTrib>7898515952173</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>1.0000000000</vUnTrib>
+          <indTot>1</indTot>
+          <rastro>
+            <nLote>78157</nLote>
+            <qLote>1.000</qLote>
+            <dFab>2025-02-13</dFab>
+            <dVal>2030-02-12</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>7</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>1.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>0.18</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>303</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>UN 1230 METANOL QUANT. LTDA 3(6.1) II</infAdProd>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>00515</cProd>
+          <cEAN>7898515965098</cEAN>
+          <xProd>Álcool n-Propílico P.A./ACS 1000 mL Lt:75764 Vl:09/09/29</xProd>
+          <NCM>29051210</NCM>
+          <CFOP>5911</CFOP>
+          <uCom>fc</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>1.0000000000</vUnCom>
+          <vProd>1.00</vProd>
+          <cEANTrib>7898515965098</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>1.0000000000</vUnTrib>
+          <indTot>1</indTot>
+          <rastro>
+            <nLote>75764</nLote>
+            <qLote>1.000</qLote>
+            <dFab>2024-09-10</dFab>
+            <dVal>2029-09-09</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>7</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>1.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>0.18</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>303</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>UN 1274 n-PROPANOL (ÁLCOOL PROPÍLICO, NORMAL) QUANT. LTDA 3 II</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>2.00</vBC>
+          <vICMS>0.36</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>2.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>2.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>3</modFrete>
+        <transporta>
+          <CNPJ>00327149000341</CNPJ>
+          <xNome>Neon Comercial Reagentes Analiticos Ltda</xNome>
+          <IE>672313766110</IE>
+          <xEnder>Rua Ernesto Joaquim de Souza, 575  - Chácara Primavera</xEnder>
+          <xMun>Suzano</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <pesoL>1.595</pesoL>
+          <pesoB>2.547</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>172288</nFat>
+          <vOrig>2.00</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>2.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-05-05</dVenc>
+          <vDup>2.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>14</tPag>
+          <vPag>2.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Pedido nro.: 184949|Cod.Cliente: 12524|Colaborador: Sp Interior 3 - Luana|Seu Pedido (Ordem de Compra): Amostra solicitado por Jaqueline via E-mail.|Entregar no Cliente|.|Lei da Transparência (12.741) - Valor Aproximado de Tributos $0.40 (20.00%) Fonte: IBPT.|||OBS:Amostra aos cuidados da Jaqueline Coimbra..|Declaro que os produtos perigosos estão adequadamente classificados, embalados, identificados e estivados para suportar os riscos das operações de transporte e que atendem às exigências da Regulamentação.</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35250500327149000341550000001722881001849491">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>LuuBKKtBxm8WJgO+bBdaglzeTB0=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>jQqVTz/YXPORVFfnZQjmKtUDtO+Wu/u6mLGb+LOLYwsvITBBX+fWxG5uoeNiVhVyxd/7gGCq5bPBcz++RO5lP2Nbn1lgVniTeasE34y2aqB/t9UDqcYmr9cdNSJlZVTR3a70hgaCILkA+3H29OxuDI8Pz79qGEOWvw5foarIp6xF3BduOPyEmV1OU/jVnAZ5S7vtJNMT4OGNSVjJ2MyR4hA4grR4rEDsZvTjWpPoWG1k31cNy59RUtZacb9a34HuvOAC/y8EJ4olTlUMyJ/vnl/NTxSPqrQcWBZGBMYRaH1V9l2VF7bGO3YDIfPYw5nw0D+4VeQFWM3JJBsthAfASg==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35250500327149000341550000001722881001849491</chNFe>
+      <dhRecbto>2025-05-05T14:21:10-03:00</dhRecbto>
+      <nProt>135251180857790</nProt>
+      <digVal>LuuBKKtBxm8WJgO+bBdaglzeTB0=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

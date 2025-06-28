@@ -1,0 +1,38 @@
+/* Estilos personalizados para mejorar la interfaz */
+
+#dragArea {
+  transition: all 0.3s ease;
+}
+
+#dragArea.dragover {
+  background-color: #eef2ff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+#fileList {
+  transition: all 0.3s ease;
+}
+
+#fileList.show {
+  display: block !important;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#progressBar {
+  transition: width 0.3s ease;
+} 

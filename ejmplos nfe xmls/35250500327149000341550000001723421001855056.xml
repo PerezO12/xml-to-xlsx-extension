@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35250500327149000341550000001723421001855056">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00185505</cNF>
+        <natOp>Venda de mercadoria adquirida ou recebida de terceiros</natOp>
+        <mod>55</mod>
+        <serie>0</serie>
+        <nNF>172342</nNF>
+        <dhEmi>2025-05-06T13:27:25-03:00</dhEmi>
+        <dhSaiEnt>2025-05-06T13:27:25-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3552502</cMunFG>
+        <tpImp>2</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>6</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>MercanteWeb NFe v4.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>00327149000341</CNPJ>
+        <xNome>Neon Comercial Reagentes Analíticos Ltda</xNome>
+        <xFant>Neon Filial</xFant>
+        <enderEmit>
+          <xLgr>Rua Ernesto Joaquim de Souza</xLgr>
+          <nro>575</nro>
+          <xBairro>Chácara Primavera</xBairro>
+          <cMun>3552502</cMun>
+          <xMun>Suzano</xMun>
+          <UF>SP</UF>
+          <CEP>08655805</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1122199999</fone>
+        </enderEmit>
+        <IE>672313766110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>73709958000120</CNPJ>
+        <xNome>Ambientaly Industria e Comercio de Produtos Quimicos Ltda</xNome>
+        <enderDest>
+          <xLgr>Rua Itajai</xLgr>
+          <nro>10</nro>
+          <xCpl>Prédio 32</xCpl>
+          <xBairro>São Francisco</xBairro>
+          <cMun>4309308</cMun>
+          <xMun>Guaíba</xMun>
+          <UF>RS</UF>
+          <CEP>92500000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>5134802114</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>0580071820</IE>
+      </dest>
+      <entrega>
+        <CNPJ>73709958000120</CNPJ>
+        <xLgr>Rua Itajai</xLgr>
+        <nro>10</nro>
+        <xCpl>Prédio 32</xCpl>
+        <xBairro>São Francisco</xBairro>
+        <cMun>4309308</cMun>
+        <xMun>Guaíba</xMun>
+        <UF>RS</UF>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>01273</cProd>
+          <cEAN>7898515956539</cEAN>
+          <xProd>Fluoreto de Potássio Dihidratado P.A. 1000 g Lt:78404 Vl:13/03/30</xProd>
+          <NCM>28261990</NCM>
+          <CFOP>6102</CFOP>
+          <uCom>fc</uCom>
+          <qCom>7.0000</qCom>
+          <vUnCom>240.0000000000</vUnCom>
+          <vProd>1680.00</vProd>
+          <cEANTrib>7898515956539</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>7.0000</qTrib>
+          <vUnTrib>240.0000000000</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>014225</xPed>
+          <nItemPed>1</nItemPed>
+          <rastro>
+            <nLote>78404</nLote>
+            <qLote>7.000</qLote>
+            <dFab>2025-03-14</dFab>
+            <dVal>2030-03-13</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>1680.00</vBC>
+              <pICMS>12.0000</pICMS>
+              <vICMS>201.60</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>340</cEnq>
+            <IPINT>
+              <CST>52</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>1478.40</vBC>
+              <pPIS>0.6500</pPIS>
+              <vPIS>9.61</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>1478.40</vBC>
+              <pCOFINS>3.0000</pCOFINS>
+              <vCOFINS>44.35</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>UN 1812 FLUORETO DE POTÁSSIO QUANT. LTDA 6.1 III</infAdProd>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>00989</cProd>
+          <cEAN>7898515965791</cEAN>
+          <xProd>1 - Cloreto de Mercúrio II P.A./ACS 500 g Lt:76265 Vl:31/08/29</xProd>
+          <NCM>28273999</NCM>
+          <CFOP>6102</CFOP>
+          <uCom>Kg</uCom>
+          <qCom>0.5000</qCom>
+          <vUnCom>3578.0000000000</vUnCom>
+          <vProd>1789.00</vProd>
+          <cEANTrib>7898515965791</cEANTrib>
+          <uTrib>fc</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>1789.0000000000</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>014225</xPed>
+          <nItemPed>2</nItemPed>
+          <rastro>
+            <nLote>76265</nLote>
+            <qLote>1.000</qLote>
+            <dFab>2024-09-01</dFab>
+            <dVal>2029-08-31</dVal>
+          </rastro>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>1</orig>
+              <CST>00</CST>
+              <modBC>0</modBC>
+              <vBC>1789.00</vBC>
+              <pICMS>4.0000</pICMS>
+              <vICMS>71.56</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>340</cEnq>
+            <IPINT>
+              <CST>52</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>1717.44</vBC>
+              <pPIS>0.6500</pPIS>
+              <vPIS>11.16</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>1717.44</vBC>
+              <pCOFINS>3.0000</pCOFINS>
+              <vCOFINS>51.52</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>UN 1624 CLORETO MERCÚRICO QUANT. LTDA 6.1 II Informações para Mapa da Policia Federal: Cloreto de Mercúrio II 99%, densidade 5,44 Kg/L</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>3469.00</vBC>
+          <vICMS>273.16</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>3469.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>20.77</vPIS>
+          <vCOFINS>95.87</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>3469.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>82110818000393</CNPJ>
+          <xNome>Alfa Transportes Ltda</xNome>
+          <IE>336829364119</IE>
+          <xEnder>Rua Antônio Utrilla, 349  - Cidade Industrial Satélite de Sã</xEnder>
+          <xMun>Guarulhos</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>2</qVol>
+          <pesoL>7.500</pesoL>
+          <pesoB>8.391</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>172342</nFat>
+          <vOrig>3469.00</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>3469.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-06-03</dVenc>
+          <vDup>3469.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>14</tPag>
+          <vPag>3469.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Pedido nro.: 185505|Cod.Cliente: 5747|Colaborador: RS / SC - Greice Costa|Seu Pedido (Ordem de Compra): 014225 solicitado por Aline Zacher Schuster via E-mail.|Cliente Retira|Telefone da Transportadora: (11)2595-0880.|.|Lei da Transparência (12.741) - Valor Aproximado de Tributos $1,192.97 (34.39%) Fonte: IBPT.|||Declaro que os produtos perigosos estão adequadamente classificados, embalados, identificados e estivados para suportar os riscos das operações de transporte e que atendem às exigências da Regulamentação.</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35250500327149000341550000001723421001855056">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>H+Zxv6CB+vrm3HluhJ9N0AW4sVw=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>HrV6NsvhmnJddRV6vGhHtNqTxHNRCaU/SqTIzWynKLs6rj91dhgIF6Zwz4X4nwLTi0yx5iFmahr9zcTryvdMv/RTzNjEkRvFniiHKNdjWkkXZuJ81a8Uw81hR5gNfE8xeZFuNE3p1xN0kctHizyrtOXwHBCmktU9Dp9TCB/GEsY8v7ApXMu/RqUJA0E6A+3dUKzzOAh+ydjRKBhQyGWfwmH2SP6SFhG6W9d8E96VLO17cZLj7gqKYmRiTAA81oIN6JmoWh3zioqX3LWyeSnceILvgOjpd2SabhYWh25MhDFju9HQFlOwfcp62mRFzHXTOtVs3hGlRPweQnOPS2eJFg==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35250500327149000341550000001723421001855056</chNFe>
+      <dhRecbto>2025-05-06T13:27:27-03:00</dhRecbto>
+      <nProt>135251194225719</nProt>
+      <digVal>H+Zxv6CB+vrm3HluhJ9N0AW4sVw=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>
