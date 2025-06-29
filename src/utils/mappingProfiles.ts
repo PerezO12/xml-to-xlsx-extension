@@ -1,4 +1,5 @@
 import { ProfileConfig, ColumnMapping } from './excelGenerator';
+import { DICCIONARIO_CV, ORDEN_CAMPOS_POR_DEFECTO, CAMPOS_MONEDA } from './constants';
 
 // Declaración para el objeto chrome de la API de extensiones
 declare const chrome: {
@@ -120,46 +121,21 @@ export const getActiveProfile = async (): Promise<ProfileConfig | undefined> => 
  * @returns Perfil por defecto
  */
 export const createDefaultProfile = (): ProfileConfig => {
-  const defaultMappings: ColumnMapping[] = [
-    // Información de la factura
-    { xmlPath: 'nfeProc.NFe.infNFe.ide.nNF', columnName: 'Número NF-e' },
-    { xmlPath: 'nfeProc.NFe.infNFe.ide.dhEmi', columnName: 'Fecha Emisión' },
-    { xmlPath: 'nfeProc.NFe.infNFe.ide.natOp', columnName: 'Naturaleza Operación' },
+  const defaultMappings: ColumnMapping[] = ORDEN_CAMPOS_POR_DEFECTO.map(xmlPath => {
+    const columnName = DICCIONARIO_CV[xmlPath] || xmlPath;
+    const formatAsCurrency = CAMPOS_MONEDA.includes(xmlPath);
     
-    // Emisor
-    { xmlPath: 'nfeProc.NFe.infNFe.emit.xNome', columnName: 'Emisor' },
-    { xmlPath: 'nfeProc.NFe.infNFe.emit.CNPJ', columnName: 'CNPJ Emisor' },
-    
-    // Destinatario
-    { xmlPath: 'nfeProc.NFe.infNFe.dest.xNome', columnName: 'Destinatario' },
-    { xmlPath: 'nfeProc.NFe.infNFe.dest.CNPJ', columnName: 'CNPJ Destinatario' },
-    
-    // Producto (primer producto)
-    { xmlPath: 'nfeProc.NFe.infNFe.det[0].prod.xProd', columnName: 'Descripción Producto' },
-    { xmlPath: 'nfeProc.NFe.infNFe.det[0].prod.cProd', columnName: 'Código Producto' },
-    { xmlPath: 'nfeProc.NFe.infNFe.det[0].prod.qCom', columnName: 'Cantidad' },
-    { xmlPath: 'nfeProc.NFe.infNFe.det[0].prod.vUnCom', columnName: 'Valor Unitario', formatAsCurrency: true },
-    { xmlPath: 'nfeProc.NFe.infNFe.det[0].prod.vProd', columnName: 'Valor Total', formatAsCurrency: true },
-    
-    // Totales
-    { xmlPath: 'nfeProc.NFe.infNFe.total.ICMSTot.vNF', columnName: 'Valor Total NF-e', formatAsCurrency: true },
-    
-    // Pagos
-    { xmlPath: 'nfeProc.NFe.infNFe.pag.detPag.tPag', columnName: 'Tipo Pago' },
-    { xmlPath: 'nfeProc.NFe.infNFe.pag.detPag.vPag', columnName: 'Valor Pago', formatAsCurrency: true },
-    
-    // Transporte
-    { xmlPath: 'nfeProc.NFe.infNFe.transp.transporta.xNome', columnName: 'Transportadora' },
-    
-    // Protocolo
-    { xmlPath: 'nfeProc.protNFe.infProt.chNFe', columnName: 'Clave NF-e' },
-    { xmlPath: 'nfeProc.protNFe.infProt.dhRecbto', columnName: 'Fecha Recibimiento' },
-  ];
+    return {
+      xmlPath,
+      columnName,
+      formatAsCurrency
+    };
+  });
   
   return {
     id: `default-${Date.now()}`,
     name: 'Perfil Predeterminado',
-    description: 'Mapeo básico de campos comunes de NFe',
+    description: 'Mapeo básico de campos comunes de NFe en el orden especificado',
     mappings: defaultMappings,
     isActive: true
   };
@@ -173,15 +149,12 @@ export const createDefaultProfile = (): ProfileConfig => {
 export const createFullProfile = (dictionaryFields: Record<string, string>): ProfileConfig => {
   const mappings: ColumnMapping[] = Object.entries(dictionaryFields).map(([xmlPath, columnName]) => {
     // Determinamos si el campo debe formatearse como moneda
-    const isCurrencyField = [
-      'vProd', 'vUnCom', 'vUnTrib', 'vBC', 'vICMS', 'vPIS', 'vCOFINS',
-      'vNF', 'vPag', 'vDup', 'vDesc', 'vLiq', 'vOrig'
-    ].some(currencyField => xmlPath.includes(currencyField));
+    const formatAsCurrency = CAMPOS_MONEDA.includes(xmlPath);
     
     return {
       xmlPath,
       columnName,
-      formatAsCurrency: isCurrencyField
+      formatAsCurrency
     };
   });
   

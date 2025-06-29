@@ -4,6 +4,7 @@ interface FileItem {
   name: string;
   size: number;
   file: File;
+  path?: string; // Para mostrar la ruta relativa del archivo
 }
 
 interface DragAreaProps {
@@ -13,15 +14,42 @@ interface DragAreaProps {
 const DragArea: React.FC<DragAreaProps> = ({ onFilesChange }) => {
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const directoryInputRef = useRef<HTMLInputElement>(null);
 
+  // Función para procesar archivos individuales
   const processFiles = (files: File[]): FileItem[] => {
     return files
-      .filter(file => file.type === 'text/xml' || file.name.endsWith('.xml'))
+      .filter(file => file.type === 'text/xml' || file.name.toLowerCase().endsWith('.xml'))
       .map(file => ({
         name: file.name,
         size: file.size,
         file: file
       }));
+  };
+
+  // Función para procesar archivos desde un directorio (usando webkitdirectory)
+  const processDirectoryFiles = (files: FileList): FileItem[] => {
+    const fileItems: FileItem[] = [];
+    
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      if (file.type === 'text/xml' || file.name.toLowerCase().endsWith('.xml')) {
+        // Extraer la ruta relativa del archivo
+        const fullPath = (file as any).webkitRelativePath || file.name;
+        const pathParts = fullPath.split('/');
+        const fileName = pathParts.pop() || file.name;
+        const relativePath = pathParts.join('/');
+        
+        fileItems.push({
+          name: fileName,
+          size: file.size,
+          file: file,
+          path: relativePath || undefined
+        });
+      }
+    }
+    
+    return fileItems;
   };
 
   const handleDragEnter = (e: React.DragEvent<HTMLDivElement>) => {
@@ -41,14 +69,23 @@ const DragArea: React.FC<DragAreaProps> = ({ onFilesChange }) => {
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDragging(false);
+    
     const files = Array.from(e.dataTransfer.files);
     const fileItems = processFiles(files);
     onFilesChange(fileItems);
   };
 
-  const handleBrowseClick = () => {
+  const handleBrowseFilesClick = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click();
+    }
+  };
+
+  const handleBrowseDirectoriesClick = () => {
+    if (directoryInputRef.current) {
+      // Configurar el input para directorios
+      (directoryInputRef.current as any).webkitdirectory = true;
+      directoryInputRef.current.click();
     }
   };
 
@@ -56,6 +93,13 @@ const DragArea: React.FC<DragAreaProps> = ({ onFilesChange }) => {
     if (e.target.files) {
       const files = Array.from(e.target.files);
       const fileItems = processFiles(files);
+      onFilesChange(fileItems);
+    }
+  };
+
+  const handleDirectoryInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const fileItems = processDirectoryFiles(e.target.files);
       onFilesChange(fileItems);
     }
   };
@@ -68,13 +112,28 @@ const DragArea: React.FC<DragAreaProps> = ({ onFilesChange }) => {
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
-      <p className="text-gray-600">Arrastra y suelta tus archivos XML aquí o</p>
-      <button
-        onClick={handleBrowseClick}
-        className="mt-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
-      >
-        Selecciona Archivos
-      </button>
+      <p className="text-gray-600 mb-4">
+        Arrastra y suelta archivos XML aquí o selecciona archivos/carpetas
+      </p>
+      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <button
+          onClick={handleBrowseFilesClick}
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
+        >
+          Seleccionar Archivos
+        </button>
+        <button
+          onClick={handleBrowseDirectoriesClick}
+          className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
+        >
+          Seleccionar Carpeta
+        </button>
+      </div>
+      <p className="text-xs text-gray-500 mt-2">
+        💡 Consejo: Para cargar carpetas completas, usa el botón "Seleccionar Carpeta"
+      </p>
+      
+      {/* Input para archivos individuales */}
       <input
         type="file"
         ref={fileInputRef}
@@ -82,6 +141,15 @@ const DragArea: React.FC<DragAreaProps> = ({ onFilesChange }) => {
         accept=".xml"
         className="hidden"
         onChange={handleFileInputChange}
+      />
+      
+      {/* Input para directorios */}
+      <input
+        type="file"
+        ref={directoryInputRef}
+        multiple
+        className="hidden"
+        onChange={handleDirectoryInputChange}
       />
     </div>
   );

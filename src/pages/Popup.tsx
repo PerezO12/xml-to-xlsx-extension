@@ -3,7 +3,7 @@ import DragArea from '../components/DragArea';
 import FileList from '../components/FileList';
 import OptionsPanel from '../components/OptionsPanel';
 import ProgressBar from '../components/ProgressBar';
-import { DICCIONARIO_CV } from '../utils/constants';
+import { DICCIONARIO_CV, ORDEN_CAMPOS_POR_DEFECTO } from '../utils/constants';
 import { parseMultipleNFeFiles, ParsedNFeData } from '../utils/xmlParser';
 
 interface FileItem {
@@ -23,13 +23,24 @@ const loadExcelGenerator = async () => {
 
 const Popup: React.FC = () => {
   const [files, setFiles] = useState<FileItem[]>([]);
-  const [customMapping, setCustomMapping] = useState<Record<string, string>>({ ...DICCIONARIO_CV });
+  const [customMapping, setCustomMapping] = useState<Record<string, string>>({});
   const [multipleSheets, setMultipleSheets] = useState<boolean>(false);
   const [formatCurrency, setFormatCurrency] = useState<boolean>(true);
   const [progress, setProgress] = useState<number>(0);
   const [progressText, setProgressText] = useState<string>('');
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [excelGenerator, setExcelGenerator] = useState<any>(null);
+
+  // Inicializar el mapeo con el orden por defecto
+  useEffect(() => {
+    const defaultMapping: Record<string, string> = {};
+    ORDEN_CAMPOS_POR_DEFECTO.forEach(xmlPath => {
+      if (DICCIONARIO_CV[xmlPath]) {
+        defaultMapping[xmlPath] = DICCIONARIO_CV[xmlPath];
+      }
+    });
+    setCustomMapping(defaultMapping);
+  }, []);
 
   useEffect(() => {
     loadExcelGenerator().then(generator => {
@@ -55,6 +66,10 @@ const Popup: React.FC = () => {
     const updatedFiles = [...files];
     updatedFiles.splice(index, 1);
     setFiles(updatedFiles);
+  };
+
+  const handleClearAllFiles = () => {
+    setFiles([]);
   };
 
   const handleMappingChange = (updatedMapping: Record<string, string>) => {
@@ -127,7 +142,19 @@ const Popup: React.FC = () => {
       <div className="container mx-auto p-4 max-w-4xl bg-white rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">XML to XLSX Converter</h1>
         <DragArea onFilesChange={handleFilesChange} />
-        {files.length > 0 && <FileList files={files} onRemoveFile={handleRemoveFile} />}
+        {files.length > 0 && (
+          <>
+            <FileList files={files} onRemoveFile={handleRemoveFile} />
+            <div className="flex justify-end mb-4">
+              <button
+                onClick={handleClearAllFiles}
+                className="text-red-500 hover:text-red-700 text-sm font-medium px-3 py-1 rounded border border-red-300 hover:bg-red-50 transition-colors"
+              >
+                Limpiar todos
+              </button>
+            </div>
+          </>
+        )}
         <OptionsPanel 
           mapping={customMapping} 
           onMappingChange={handleMappingChange} 

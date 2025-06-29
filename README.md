@@ -13,6 +13,13 @@ Una extensión de navegador para convertir archivos XML de NFe (Nota Fiscal Elet
 - **📥 Descarga automática**: Genera y descarga archivos Excel automáticamente
 - **💾 Almacenamiento local**: Guarda perfiles usando `chrome.storage.local`
 - **🔍 Analizador XML en tiempo real**: Visualiza campos disponibles antes de crear mapeos
+- **✅ Carga de archivos XML individuales**: Arrastra y suelta o selecciona archivos XML individuales
+- **✅ Carga de carpetas completas**: Selecciona una carpeta para procesar todos los archivos XML contenidos
+- **✅ Procesamiento en lote**: Procesa múltiples archivos XML simultáneamente
+- **✅ Mapeo personalizable**: Personaliza qué campos extraer de los archivos XML
+- **✅ Múltiples hojas**: Opción para generar una hoja por archivo XML
+- **✅ Formato de moneda**: Opción para formatear valores monetarios
+- **✅ Interfaz moderna**: Diseño limpio y fácil de usar
 
 ## Tecnologías utilizadas
 

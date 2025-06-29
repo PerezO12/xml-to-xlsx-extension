@@ -332,37 +332,25 @@ function prepareWorksheetData(
   mappingProfile: Record<string, string>,
   formatCurrency: boolean
 ): Record<string, any>[] {
-  console.log('prepareWorksheetData llamado con:', { dataLength: data.length, mappingProfileKeys: Object.keys(mappingProfile).length });
-  
   const result: Record<string, any>[] = [];
 
-  data.forEach((nfe, index) => {
-    console.log(`Procesando NFe ${index + 1}:`, nfe);
-    
-    // Crear una fila simple con los datos mapeados
+  data.forEach((nfe) => {
     const row: Record<string, any> = {};
-    
-    // Mapear cada campo del XML a su columna correspondiente
     Object.entries(mappingProfile).forEach(([xmlPath, columnName]) => {
-      let value = nfe[xmlPath]; // Los datos ya están parseados, solo necesitamos acceder por la clave
-      
+      let value = nfe[xmlPath];
+
       // Formatear valores monetarios si es necesario
       if (formatCurrency && CAMPOS_MONEDA.includes(xmlPath) && value !== undefined && value !== null) {
         value = formatCurrencyValue(value);
-      } 
-      // Formatear fechas si es necesario
-      else if (xmlPath.includes('dhEmi') || xmlPath.includes('dhSaiEnt') || xmlPath.includes('dFab') || xmlPath.includes('dVal') || xmlPath.includes('dhRecbto')) {
+      } else if (xmlPath.includes('dhEmi') || xmlPath.includes('dhSaiEnt') || xmlPath.includes('dFab') || xmlPath.includes('dVal') || xmlPath.includes('dhRecbto')) {
         value = formatDateValue(value);
       }
-      
+
       row[columnName] = value;
     });
-    
-    console.log(`Fila ${index + 1} creada:`, row);
     result.push(row);
   });
 
-  console.log('Total de filas preparadas:', result.length);
   return result;
 }
 

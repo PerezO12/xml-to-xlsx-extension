@@ -5,7 +5,13 @@
   "description": "Convierte archivos XML de Notas Fiscais Eletrônicas a formato XLSX de manera eficiente.",
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "file://*",
+    "http://*",
+    "https://*"
+  ],
+  "host_permissions": [
+    "file://*"
   ],
   "action": {
     "default_popup": "popup.html"
