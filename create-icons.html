@@ -1,53 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create Icons</title>
+    <title>Create Icons - XML to XLSX Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .icon-container {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .download-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #4F46E5;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 5px;
+        }
+        .download-link:hover {
+            background: #3730A3;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="canvas16" width="16" height="16" style="border: 1px solid black; margin: 5px;"></canvas>
-    <canvas id="canvas48" width="48" height="48" style="border: 1px solid black; margin: 5px;"></canvas>
-    <canvas id="canvas128" width="128" height="128" style="border: 1px solid black; margin: 5px;"></canvas>
+    <h1>Generador de Iconos - XML to XLSX Converter</h1>
+    
+    <div class="icon-container">
+        <canvas id="canvas16" width="16" height="16"></canvas>
+        <br>
+        <a class="download-link" id="download16">Descargar 16x16</a>
+    </div>
+    
+    <div class="icon-container">
+        <canvas id="canvas48" width="48" height="48"></canvas>
+        <br>
+        <a class="download-link" id="download48">Descargar 48x48</a>
+    </div>
+    
+    <div class="icon-container">
+        <canvas id="canvas128" width="128" height="128"></canvas>
+        <br>
+        <a class="download-link" id="download128">Descargar 128x128</a>
+    </div>
     
     <script>
         function createIcon(canvasId, size) {
             const canvas = document.getElementById(canvasId);
             const ctx = canvas.getContext('2d');
             
-            // Background
-            ctx.fillStyle = '#4F46E5';
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#4F46E5');
+            gradient.addColorStop(1, '#7C3AED');
+            
+            // Background with rounded corners effect
+            ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, size, size);
             
-            // XML to Excel representation
+            // Add subtle shadow
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+            ctx.shadowBlur = size * 0.1;
+            ctx.shadowOffsetX = size * 0.05;
+            ctx.shadowOffsetY = size * 0.05;
+            
+            // XML symbol (left side)
             ctx.fillStyle = '#FFFFFF';
-            ctx.font = `${Math.floor(size/8)}px Arial`;
+            ctx.font = `bold ${Math.floor(size * 0.25)}px Arial`;
             ctx.textAlign = 'center';
-            ctx.fillText('XML', size/2, size/3);
+            ctx.textBaseline = 'middle';
+            ctx.fillText('XML', size * 0.3, size * 0.4);
             
+            // Arrow
+            ctx.strokeStyle = '#FFFFFF';
+            ctx.lineWidth = Math.max(1, size * 0.02);
+            ctx.beginPath();
+            ctx.moveTo(size * 0.45, size * 0.5);
+            ctx.lineTo(size * 0.55, size * 0.5);
+            ctx.moveTo(size * 0.52, size * 0.47);
+            ctx.lineTo(size * 0.55, size * 0.5);
+            ctx.lineTo(size * 0.52, size * 0.53);
+            ctx.stroke();
+            
+            // XLS symbol (right side)
             ctx.fillStyle = '#10B981';
-            ctx.fillRect(size/4, size/2, size/2, size/3);
+            ctx.fillRect(size * 0.6, size * 0.25, size * 0.3, size * 0.5);
             
             ctx.fillStyle = '#FFFFFF';
-            ctx.font = `${Math.floor(size/12)}px Arial`;
-            ctx.fillText('XLS', size/2, size*0.75);
+            ctx.font = `bold ${Math.floor(size * 0.2)}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('XLS', size * 0.75, size * 0.5);
+            
+            // Reset shadow
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
         }
         
+        function createDownloadLinks() {
+            ['16', '48', '128'].forEach(size => {
+                const canvas = document.getElementById(`canvas${size}`);
+                const link = document.getElementById(`download${size}`);
+                
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dataURL = canvas.toDataURL('image/png');
+                    link.href = dataURL;
+                    link.download = `icon-${size}.png`;
+                    
+                    // Trigger download
+                    const tempLink = document.createElement('a');
+                    tempLink.href = dataURL;
+                    tempLink.download = `icon-${size}.png`;
+                    document.body.appendChild(tempLink);
+                    tempLink.click();
+                    document.body.removeChild(tempLink);
+                });
+            });
+        }
+        
+        // Create icons
         createIcon('canvas16', 16);
         createIcon('canvas48', 48);
         createIcon('canvas128', 128);
         
-        // Create download links
-        setTimeout(() => {
-            ['canvas16', 'canvas48', 'canvas128'].forEach(id => {
-                const canvas = document.getElementById(id);
-                const link = document.createElement('a');
-                link.download = `icon-${canvas.width}.png`;
-                link.href = canvas.toDataURL();
-                link.textContent = `Download ${canvas.width}x${canvas.width} icon`;
-                link.style.display = 'block';
-                link.style.margin = '5px';
-                document.body.appendChild(link);
-            });
-        }, 100);
+        // Setup download links
+        createDownloadLinks();
     </script>
 </body>
 </html>

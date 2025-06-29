@@ -1,7 +1,17 @@
 import { ProfileConfig, ColumnMapping } from './excelGenerator';
 import { DICCIONARIO_CV, ORDEN_CAMPOS_POR_DEFECTO, CAMPOS_MONEDA } from './constants';
 
-// Declaración para el objeto chrome de la API de extensiones
+// Declaración para el objeto browser de la API de extensiones (compatible con Firefox)
+declare const browser: {
+  storage: {
+    local: {
+      get: (key: string) => Promise<any>;
+      set: (data: Record<string, any>) => Promise<void>;
+    }
+  }
+};
+
+// Fallback para Chrome si browser no está disponible
 declare const chrome: {
   storage: {
     local: {
@@ -11,12 +21,18 @@ declare const chrome: {
   }
 };
 
+// Función helper para obtener la API de almacenamiento correcta
+const getStorageAPI = () => {
+  return typeof browser !== 'undefined' ? browser : chrome;
+};
+
 /**
  * Guarda un perfil de mapeo en el almacenamiento local
  * @param profile Perfil a guardar
  */
 export const saveProfile = async (profile: ProfileConfig): Promise<void> => {
   try {
+    const storage = getStorageAPI();
     // Obtenemos perfiles existentes
     const profiles = await getProfiles();
     
@@ -32,7 +48,7 @@ export const saveProfile = async (profile: ProfileConfig): Promise<void> => {
     }
     
     // Guardamos los perfiles actualizados
-    await chrome.storage.local.set({ profiles });
+    await storage.storage.local.set({ profiles });
     
     return Promise.resolve();
   } catch (error) {
@@ -47,7 +63,8 @@ export const saveProfile = async (profile: ProfileConfig): Promise<void> => {
  */
 export const getProfiles = async (): Promise<ProfileConfig[]> => {
   try {
-    const result = await chrome.storage.local.get('profiles');
+    const storage = getStorageAPI();
+    const result = await storage.storage.local.get('profiles');
     return result.profiles || [];
   } catch (error) {
     console.error('Error al obtener perfiles:', error);
@@ -61,6 +78,7 @@ export const getProfiles = async (): Promise<ProfileConfig[]> => {
  */
 export const deleteProfile = async (profileId: string): Promise<void> => {
   try {
+    const storage = getStorageAPI();
     // Obtenemos perfiles existentes
     const profiles = await getProfiles();
     
@@ -68,7 +86,7 @@ export const deleteProfile = async (profileId: string): Promise<void> => {
     const updatedProfiles = profiles.filter(p => p.id !== profileId);
     
     // Guardamos los perfiles actualizados
-    await chrome.storage.local.set({ profiles: updatedProfiles });
+    await storage.storage.local.set({ profiles: updatedProfiles });
     
     return Promise.resolve();
   } catch (error) {
@@ -83,6 +101,7 @@ export const deleteProfile = async (profileId: string): Promise<void> => {
  */
 export const activateProfile = async (profileId: string): Promise<void> => {
   try {
+    const storage = getStorageAPI();
     // Obtenemos perfiles existentes
     const profiles = await getProfiles();
     
@@ -93,7 +112,7 @@ export const activateProfile = async (profileId: string): Promise<void> => {
     }));
     
     // Guardamos los perfiles actualizados
-    await chrome.storage.local.set({ profiles: updatedProfiles });
+    await storage.storage.local.set({ profiles: updatedProfiles });
     
     return Promise.resolve();
   } catch (error) {

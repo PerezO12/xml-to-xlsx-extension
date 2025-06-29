@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="128" height="128" fill="url(#grad)" rx="12.8"/>
+  
+  <!-- XML text -->
+  <text x="38.4" y="51.2" 
+        font-family="Arial, sans-serif" 
+        font-size="32" 
+        font-weight="bold" 
+        fill="white" 
+        text-anchor="middle" 
+        dominant-baseline="middle">XML</text>
+  
+  <!-- Arrow -->
+  <line x1="57.6" y1="64" x2="70.4" y2="64" 
+        stroke="white" stroke-width="2.56"/>
+  <polygon points="66.56,60.16 70.4,64 66.56,67.84" 
+           fill="white"/>
+  
+  <!-- XLS box -->
+  <rect x="76.8" y="32" width="38.4" height="64" 
+        fill="#10B981" rx="6.4"/>
+  
+  <!-- XLS text -->
+  <text x="96" y="64" 
+        font-family="Arial, sans-serif" 
+        font-size="25.6" 
+        font-weight="bold" 
+        fill="white" 
+        text-anchor="middle" 
+        dominant-baseline="middle">XLS</text>
+</svg>

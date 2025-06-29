@@ -1,28 +1,215 @@
-# Node modules
+# ==============================================
+# Node.js y npm
+# ==============================================
 node_modules/
-
-# Build output
-dist/
-
-# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+.npm
+.yarn-integrity
+.pnpm-debug.log*
 
-# OS files
+# ==============================================
+# Build outputs y archivos generados
+# ==============================================
+dist/
+build/
+out/
+lib/
+es/
+coverage/
+
+# Archivos de distribución generados
+*.zip
+*.tar.gz
+*.rar
+xml-to-xlsx-firefox.zip
+xml-to-xlsx-chrome.zip
+
+# ==============================================
+# Archivos temporales y caché
+# ==============================================
+*.tmp
+*.temp
+.cache/
+.vite/
+.turbo/
+.parcel-cache/
+.next/
+.nuxt/
+.output/
+
+# ==============================================
+# Logs
+# ==============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ==============================================
+# Archivos del sistema operativo
+# ==============================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Editor directories and files
+# ==============================================
+# Editores e IDEs
+# ==============================================
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
 
-# Env files
+# Pero permitir configuraciones específicas del proyecto
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ==============================================
+# Variables de entorno y configuración
+# ==============================================
 .env
 .env.*
+!.env.example
+.envrc
 
-# Others
-*.local
-*.log 
+# ==============================================
+# Archivos de testing y debugging
+# ==============================================
+test-results/
+playwright-report/
+coverage/
+*.lcov
+.nyc_output/
+
+# ==============================================
+# Archivos específicos de extensiones
+# ==============================================
+# Archivos de Firefox durante desarrollo
+web-ext-artifacts/
+.web-extension-id
+
+# Archivos de Chrome durante desarrollo
+*.crx
+*.pem
+
+# Stores de extensiones
+extension-stores/
+reviews/
+submissions/
+
+# ==============================================
+# Dependencias y packages específicos
+# ==============================================
+# TypeScript
+*.tsbuildinfo
+
+# ESLint
+.eslintcache
+
+# Prettier
+.prettierignore
+
+# ==============================================
+# Archivos de desarrollo local
+# ==============================================
+# Archivos de testing local
+test-files/
+sample-xml/
+local-test/
+
+# Archivos de configuración local
+local.config.js
+dev.config.js
+
+# ==============================================
+# Iconos generados automáticamente
+# ==============================================
+# Solo ignorar si se generan automáticamente
+# icons/icon-*.png (comentado porque pueden ser necesarios)
+
+# ==============================================
+# Archivos de documentación temporal
+# ==============================================
+# Documentos de trabajo temporal
+*.draft.md
+NOTES.md
+TODO.md
+
+# ==============================================
+# Archivos de seguridad
+# ==============================================
+# Claves y certificados
+*.pem
+*.key
+*.p12
+*.crt
+*.cert
+
+# ==============================================
+# Miscellaneous
+# ==============================================
+*.pid
+*.seed
+*.pid.lock
+.grunt
+.lock-wscript
+jspm_packages/
+typings/
+.npm
+.node_repl_history
+*.tgz
+.yarn-integrity
+.env.test
+.env.production
+ejmplos nfe xmls/
+.vs/
+# ==============================================
+# Archivos específicos del proyecto
+# ==============================================
+# Archivos de backup automático
+*.backup
+*.bak
+
+# Archivos de profiling
+*.prof
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ==============================================
+# IMPORTANTE: Archivos que SÍ deben incluirse
+# ==============================================
+# Los siguientes archivos son importantes y NO deben ser ignorados:
+# - manifest.json (configuración de la extensión)
+# - package.json (dependencias del proyecto)
+# - *.html (interfaces de la extensión)
+# - src/ (código fuente)
+# - icons/ (iconos de la extensión, si son estáticos)
+# - README.md (documentación)
+# - LICENSE (licencia)
+# - tsconfig.json (configuración TypeScript)
+# - vite.config.js (configuración de build)
+# - tailwind.config.js (configuración de estilos)

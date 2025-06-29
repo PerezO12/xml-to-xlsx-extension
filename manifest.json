@@ -1,25 +1,44 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "XML to XLSX Converter",
-  "version": "1.0",
-  "description": "Convierte archivos XML de Notas Fiscais Eletrônicas a formato XLSX de manera eficiente.",
+  "version": "1.0.0",
+  "description": "Convierte archivos XML de Notas Fiscais Eletrônicas a formato XLSX de manera eficiente con perfiles de mapeo personalizables.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "browser_action": {
+    "default_title": "XML to XLSX Converter - Abrir página completa",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "background": {
+    "scripts": ["src/background.js"],
+    "persistent": false
+  },
   "permissions": [
     "activeTab",
     "storage",
+    "tabs",
     "file://*",
     "http://*",
     "https://*"
   ],
-  "host_permissions": [
-    "file://*"
-  ],
-  "action": {
-    "default_popup": "popup.html"
-  },
   "web_accessible_resources": [
-    {
-      "resources": ["icons/*"],
-      "matches": ["<all_urls>"]
+    "icons/*",
+    "carga.html",
+    "src/*"
+  ],
+  "applications": {
+    "gecko": {
+      "id": "xml-to-xlsx@adrianperez.com",
+      "strict_min_version": "57.0"
     }
-  ]
-} 
+  },
+  "author": "Adrián Pérez",
+  "homepage_url": "https://github.com/adrianperez/xml-to-xlsx-extension"
+}

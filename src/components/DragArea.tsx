@@ -9,12 +9,41 @@ interface FileItem {
 
 interface DragAreaProps {
   onFilesChange: (files: FileItem[]) => void;
+  isPopup?: boolean; // Nueva prop para saber si estamos en un popup
 }
 
-const DragArea: React.FC<DragAreaProps> = ({ onFilesChange }) => {
+// Declaración para el objeto chrome/browser de la API de extensiones
+declare const chrome: {
+  runtime: {
+    getURL: (path: string) => string;
+  }
+};
+
+declare const browser: {
+  runtime: {
+    getURL: (path: string) => string;
+  }
+};
+
+const DragArea: React.FC<DragAreaProps> = ({ onFilesChange, isPopup = false }) => {
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const directoryInputRef = useRef<HTMLInputElement>(null);
+
+  // Función para abrir página completa si estamos en popup
+  const openFullPage = () => {
+    try {
+      const runtime = typeof browser !== 'undefined' ? browser : chrome;
+      if (runtime && runtime.runtime) {
+        const url = runtime.runtime.getURL('carga.html');
+        window.open(url, '_blank');
+      }
+    } catch (error) {
+      console.error('Error al abrir página completa:', error);
+      // Fallback: mostrar mensaje al usuario
+      alert('Por favor, abre la página completa de la extensión desde el menú de opciones para cargar archivos.');
+    }
+  };
 
   // Función para procesar archivos individuales
   const processFiles = (files: File[]): FileItem[] => {
@@ -76,12 +105,24 @@ const DragArea: React.FC<DragAreaProps> = ({ onFilesChange }) => {
   };
 
   const handleBrowseFilesClick = () => {
+    // Si estamos en un popup, redirigir a la página completa
+    if (isPopup) {
+      openFullPage();
+      return;
+    }
+    
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
   };
 
   const handleBrowseDirectoriesClick = () => {
+    // Si estamos en un popup, redirigir a la página completa
+    if (isPopup) {
+      openFullPage();
+      return;
+    }
+    
     if (directoryInputRef.current) {
       // Configurar el input para directorios
       (directoryInputRef.current as any).webkitdirectory = true;
@@ -115,44 +156,79 @@ const DragArea: React.FC<DragAreaProps> = ({ onFilesChange }) => {
       <p className="text-gray-600 mb-4">
         Arrastra y suelta archivos XML aquí o selecciona archivos/carpetas
       </p>
+      
+      {isPopup && (
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+          <div className="flex items-start">
+            <div className="flex-shrink-0">
+              <svg className="h-5 w-5 text-blue-400 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div className="ml-3">
+              <p className="text-blue-800 text-sm font-medium">
+                ℹ️ Firefox: Selección de archivos
+              </p>
+              <p className="text-blue-600 text-xs mt-1">
+                Los botones de selección abrirán la página completa para evitar que el popup se cierre
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         <button
           onClick={handleBrowseFilesClick}
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
+          className={`font-bold py-2 px-4 rounded transition-colors duration-200 ${
+            isPopup 
+              ? 'bg-purple-500 hover:bg-purple-600 text-white' 
+              : 'bg-blue-500 hover:bg-blue-600 text-white'
+          }`}
+          title={isPopup ? "Abre la página completa para seleccionar archivos" : "Seleccionar archivos XML"}
         >
-          Seleccionar Archivos
+          {isPopup ? '🚀 Seleccionar Archivos (Nueva Pestaña)' : 'Seleccionar Archivos'}
         </button>
         <button
           onClick={handleBrowseDirectoriesClick}
-          className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
+          className={`font-bold py-2 px-4 rounded transition-colors duration-200 ${
+            isPopup 
+              ? 'bg-orange-500 hover:bg-orange-600 text-white' 
+              : 'bg-green-500 hover:bg-green-600 text-white'
+          }`}
+          title={isPopup ? "Abre la página completa para seleccionar carpeta" : "Seleccionar carpeta con archivos XML"}
         >
-          Seleccionar Carpeta
+          {isPopup ? '📁 Seleccionar Carpeta (Nueva Pestaña)' : 'Seleccionar Carpeta'}
         </button>
       </div>
       <p className="text-xs text-gray-500 mt-2">
-        💡 Consejo: Para cargar carpetas completas, usa el botón "Seleccionar Carpeta"
+        💡 Consejo: {isPopup ? 'Usa drag & drop aquí o abre la página completa para explorar archivos' : 'Para cargar carpetas completas, usa el botón "Seleccionar Carpeta"'}
       </p>
       
-      {/* Input para archivos individuales */}
-      <input
-        type="file"
-        ref={fileInputRef}
-        multiple
-        accept=".xml"
-        className="hidden"
-        onChange={handleFileInputChange}
-      />
-      
-      {/* Input para directorios */}
-      <input
-        type="file"
-        ref={directoryInputRef}
-        multiple
-        className="hidden"
-        onChange={handleDirectoryInputChange}
-      />
+      {/* Input para archivos individuales - solo se muestran si no estamos en popup */}
+      {!isPopup && (
+        <>
+          <input
+            type="file"
+            ref={fileInputRef}
+            multiple
+            accept=".xml"
+            className="hidden"
+            onChange={handleFileInputChange}
+          />
+          
+          {/* Input para directorios */}
+          <input
+            type="file"
+            ref={directoryInputRef}
+            multiple
+            className="hidden"
+            onChange={handleDirectoryInputChange}
+          />
+        </>
+      )}
     </div>
   );
 };
 
-export default DragArea; 
+export default DragArea;
