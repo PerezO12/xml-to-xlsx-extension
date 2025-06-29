@@ -70,42 +70,80 @@ export function parseNFeXml(
 }
 
 function extractValueFromPath(obj: any, path: string): any {
+  if (!obj || !path) {
+    return null;
+  }
+
   const keys = path.split('.');
   let current = obj;
 
-  for (const key of keys) {
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    
     if (current === null || current === undefined) {
       return null;
     }
 
+    // Handle attributes
     if (key.startsWith('@')) {
-      // Es un atributo
       const attrName = key.substring(1);
+      if (current[`@${attrName}`] !== undefined) {
+        return current[`@${attrName}`];
+      }
       if (current[attrName] !== undefined) {
         return current[attrName];
       }
       return null;
     }
 
-    if (Array.isArray(current)) {
-      // Si es un array, tomamos el primer elemento
-      if (current.length > 0) {
-        current = current[0];
+    // Handle array access with index notation like "det[0]"
+    const arrayMatch = key.match(/^(.*)\[(\d+)\]$/);
+    if (arrayMatch) {
+      const [, propName, index] = arrayMatch;
+      const indexNum = parseInt(index, 10);
+      
+      if (current[propName] !== undefined) {
+        current = current[propName];
+        if (Array.isArray(current) && current[indexNum] !== undefined) {
+          current = current[indexNum];
+        } else if (!Array.isArray(current) && indexNum === 0) {
+          // If it's not an array but index is 0, treat as single item
+          // current stays the same
+        } else {
+          return null;
+        }
+      } else {
+        return null;
+      }
+    } else {
+      // Normal property access
+      if (Array.isArray(current)) {
+        // If current is an array, take the first element
+        if (current.length > 0) {
+          current = current[0];
+        } else {
+          return null;
+        }
+      }
+
+      if (current[key] !== undefined) {
+        current = current[key];
       } else {
         return null;
       }
     }
-
-    if (current[key] !== undefined) {
-      current = current[key];
-    } else {
-      return null;
-    }
   }
 
-  // Si el valor final es un objeto con _text, extraemos el texto
-  if (current && typeof current === 'object' && current._text !== undefined) {
-    return current._text;
+  // Handle XML text content
+  if (current && typeof current === 'object') {
+    if (current._text !== undefined) {
+      return current._text;
+    }
+    if (current['#text'] !== undefined) {
+      return current['#text'];
+    }
+    // If it's an object without text content, return the object itself
+    // The caller can decide how to handle it
   }
 
   return current;
@@ -243,19 +281,33 @@ export function parseMultipleNFeFiles(
   files: File[], 
   mappingProfile: Record<string, string>
 ): Promise<ParsedNFeData[]> {
+  console.log('parseMultipleNFeFiles called with:', files.length, 'files and', Object.keys(mappingProfile).length, 'mappings');
+  
   return Promise.all(
-    files.map(async (file) => {
+    files.map(async (file, fileIndex) => {
       try {
+        console.log(`Processing file ${fileIndex + 1}/${files.length}: ${file.name}`);
         const xmlContent = await file.text();
         const parsedDataArray = parseNFeXmlWithMultipleRows(xmlContent, mappingProfile);
         
+        console.log(`File ${file.name} generated ${parsedDataArray.length} rows`);
+        
         // Agregar información del archivo a cada fila generada
-        return parsedDataArray.map(parsedData => ({
-          ...parsedData,
-          '_fileName': file.name,
-          '_fileSize': file.size,
-          '_lastModified': file.lastModified
-        }));
+        return parsedDataArray.map((parsedData, rowIndex) => {
+          const enrichedData = {
+            ...parsedData,
+            '_fileName': file.name,
+            '_fileSize': file.size,
+            '_lastModified': file.lastModified
+          };
+          
+          // Log first row of first file for debugging
+          if (fileIndex === 0 && rowIndex === 0) {
+            console.log('First row sample:', enrichedData);
+          }
+          
+          return enrichedData;
+        });
       } catch (error) {
         console.error(`Error procesando archivo ${file.name}:`, error);
         return [{
@@ -268,7 +320,9 @@ export function parseMultipleNFeFiles(
     })
   ).then(results => {
     // Aplanar todos los arrays de resultados
-    return results.flat();
+    const flatResults = results.flat();
+    console.log('parseMultipleNFeFiles final result:', flatResults.length, 'total rows');
+    return flatResults;
   });
 }
 
@@ -282,6 +336,8 @@ export function parseNFeXmlWithMultipleRows(
   xmlContent: string,
   mappingProfile: Record<string, string> = DICCIONARIO_CV
 ): ParsedNFeData[] {
+  console.log('parseNFeXmlWithMultipleRows called with mapping profile keys:', Object.keys(mappingProfile).length);
+  
   const parser = new XMLParser({
     ignoreAttributes: false,
     attributeNamePrefix: '@',
@@ -300,6 +356,8 @@ export function parseNFeXmlWithMultipleRows(
 
   try {
     const parsedXml = parser.parse(xmlContent);
+    console.log('XML parsed successfully');
+    
     const results: ParsedNFeData[] = [];
 
     // Extraer productos, pagos y duplicatas
@@ -307,19 +365,32 @@ export function parseNFeXmlWithMultipleRows(
     const pagos = extractArrayFromPath(parsedXml, 'nfeProc.NFe.infNFe.pag.detPag');
     const duplicatas = extractArrayFromPath(parsedXml, 'nfeProc.NFe.infNFe.cobr.dup');
 
+    console.log('Extracted arrays:', { productos: productos.length, pagos: pagos.length, duplicatas: duplicatas.length });
+
     // Si no hay productos, pagos ni duplicatas, generar al menos una fila con datos generales
     if (productos.length === 0 && pagos.length === 0 && duplicatas.length === 0) {
+      console.log('No products, payments, or duplicates found, creating single row with general data');
       const generalData: ParsedNFeData = {};
+      let foundData = false;
+      
       Object.keys(mappingProfile).forEach((xmlPath) => {
         try {
           const value = extractValueFromPath(parsedXml, xmlPath);
           generalData[xmlPath] = value;
+          if (value !== null && value !== undefined && value !== '') {
+            foundData = true;
+          }
         } catch (error) {
           console.warn(`Error extrayendo valor para ${xmlPath}:`, error);
           generalData[xmlPath] = null;
         }
       });
-      results.push(generalData);
+      
+      if (foundData) {
+        results.push(generalData);
+      } else {
+        console.warn('No data found even in general fields');
+      }
       return results;
     }
 
@@ -328,10 +399,17 @@ export function parseNFeXmlWithMultipleRows(
     const pagosArray = pagos.length > 0 ? pagos : [{}];
     const duplicatasArray = duplicatas.length > 0 ? duplicatas : [{}];
 
+    console.log('Processing combinations:', { 
+      productos: productosArray.length, 
+      pagos: pagosArray.length, 
+      duplicatas: duplicatasArray.length 
+    });
+
     for (let i = 0; i < productosArray.length; i++) {
       for (let j = 0; j < pagosArray.length; j++) {
         for (let k = 0; k < duplicatasArray.length; k++) {
           const rowData: ParsedNFeData = {};
+          let hasRowData = false;
 
           Object.keys(mappingProfile).forEach((xmlPath) => {
             try {
@@ -361,21 +439,28 @@ export function parseNFeXmlWithMultipleRows(
               }
 
               rowData[xmlPath] = value;
+              
+              if (value !== null && value !== undefined && value !== '') {
+                hasRowData = true;
+              }
             } catch (error) {
               console.warn(`Error extrayendo valor para ${xmlPath}:`, error);
               rowData[xmlPath] = null;
             }
           });
 
-          results.push(rowData);
+          if (hasRowData) {
+            results.push(rowData);
+          }
         }
       }
     }
 
+    console.log('parseNFeXmlWithMultipleRows generated', results.length, 'rows');
     return results;
   } catch (error) {
     console.error('Error parseando XML:', error);
-    throw new Error('Error al parsear el archivo XML');
+    throw new Error('Error al parsear el archivo XML: ' + (error instanceof Error ? error.message : 'Unknown error'));
   }
 }
 

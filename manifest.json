@@ -1,15 +1,15 @@
 {
   "manifest_version": 2,
   "name": "XML to XLSX Converter",
-  "version": "1.0.0",
-  "description": "Convierte archivos XML de Notas Fiscais Eletrônicas a formato XLSX de manera eficiente con perfiles de mapeo personalizables.",
+  "version": "2.0.0",
+  "description": "Convierte archivos XML de NFe a formato XLSX con interfaz optimizada y procesamiento local de alta eficiencia.",
   "icons": {
     "16": "icons/icon-16.png",
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
   },
   "browser_action": {
-    "default_title": "XML to XLSX Converter - Abrir página completa",
+    "default_title": "XML to XLSX Converter - Abrir aplicación",
     "default_icon": {
       "16": "icons/icon-16.png",
       "48": "icons/icon-48.png",
@@ -21,17 +21,15 @@
     "persistent": false
   },
   "permissions": [
-    "activeTab",
     "storage",
-    "tabs",
-    "file://*",
-    "http://*",
-    "https://*"
+    "tabs"
   ],
   "web_accessible_resources": [
     "icons/*",
     "carga.html",
-    "src/*"
+    "src/*",
+    "assets/*",
+    "chunks/*"
   ],
   "applications": {
     "gecko": {

@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import preact from '@preact/preset-vite';
 import { resolve } from 'path';
 import { copyFileSync, mkdirSync, existsSync, readdirSync } from 'fs';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    preact(),
     {
       name: 'copy-manifest-and-background',
       writeBundle() {
@@ -40,7 +40,6 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        popup: resolve(__dirname, 'popup.html'),
         carga: resolve(__dirname, 'carga.html'),
       },
       output: {
@@ -54,10 +53,18 @@ export default defineConfig({
         }
       }
     },
-    // Configuración específica para Firefox WebExtensions
+    // Configuración específica para Firefox WebExtensions - optimizada para Preact
     target: 'es2018', // Compatible con Firefox 57+
-    minify: 'esbuild', // Usar esbuild en lugar de terser
-    sourcemap: false
+    minify: 'esbuild', // Usar esbuild para mejor rendimiento
+    sourcemap: false,
+    chunkSizeWarningLimit: 1000 // Aumentar límite para archivos grandes
+  },
+  // Alias para compatibilidad con React hooks en Preact
+  resolve: {
+    alias: {
+      'react': 'preact/compat',
+      'react-dom': 'preact/compat'
+    }
   }
 });
 

@@ -1,4 +1,4 @@
-// Utils para manejo de almacenamiento de la extensión
+// Utilidades optimizadas para almacenamiento de la extensión
 
 // Declaración para APIs de extensiones
 declare const chrome: {
@@ -21,13 +21,13 @@ declare const browser: {
   }
 };
 
-// Interfaz para el estado temporal
-interface TempState {
-  files: Array<{name: string; size: number}>;
+// Interfaz para configuración de usuario - actualizada para incluir showAdvanced
+interface UserConfig {
   mapping: Record<string, string>;
   multipleSheets: boolean;
   formatCurrency: boolean;
-  timestamp: number;
+  showAdvanced?: boolean;
+  lastUsed?: number;
 }
 
 // Obtener la API de storage disponible
@@ -41,87 +41,22 @@ const getStorageAPI = () => {
   return null;
 };
 
-// Guardar estado temporal (por ejemplo, antes de abrir el explorador de archivos)
-export const saveTempState = async (state: Partial<TempState>): Promise<boolean> => {
-  try {
-    const storage = getStorageAPI();
-    if (!storage) {
-      console.warn('Storage API no disponible, usando localStorage');
-      localStorage.setItem('xml-converter-temp-state', JSON.stringify({
-        ...state,
-        timestamp: Date.now()
-      }));
-      return true;
-    }
-
-    await storage.set({
-      'xml-converter-temp-state': {
-        ...state,
-        timestamp: Date.now()
-      }
-    });
-    return true;
-  } catch (error) {
-    console.error('Error al guardar estado temporal:', error);
-    return false;
-  }
-};
-
-// Recuperar estado temporal
-export const getTempState = async (): Promise<TempState | null> => {
-  try {
-    const storage = getStorageAPI();
-    let result: any;
-
-    if (!storage) {
-      const stored = localStorage.getItem('xml-converter-temp-state');
-      result = stored ? JSON.parse(stored) : null;
-    } else {
-      const data = await storage.get('xml-converter-temp-state');
-      result = data['xml-converter-temp-state'] || null;
-    }
-
-    if (!result) return null;
-
-    // Verificar que el estado no sea demasiado antiguo (máximo 1 hora)
-    const maxAge = 60 * 60 * 1000; // 1 hora en milisegundos
-    if (Date.now() - result.timestamp > maxAge) {
-      await clearTempState();
-      return null;
-    }
-
-    return result;
-  } catch (error) {
-    console.error('Error al recuperar estado temporal:', error);
-    return null;
-  }
-};
-
-// Limpiar estado temporal
-export const clearTempState = async (): Promise<void> => {
-  try {
-    const storage = getStorageAPI();
-    if (!storage) {
-      localStorage.removeItem('xml-converter-temp-state');
-      return;
-    }
-
-    await storage.remove('xml-converter-temp-state');
-  } catch (error) {
-    console.error('Error al limpiar estado temporal:', error);
-  }
-};
-
 // Guardar configuración de usuario
-export const saveUserConfig = async (config: Record<string, any>): Promise<boolean> => {
+export const saveUserConfig = async (config: Partial<UserConfig>): Promise<boolean> => {
   try {
     const storage = getStorageAPI();
+    const configWithTimestamp = {
+      ...config,
+      lastUsed: Date.now()
+    };
+
     if (!storage) {
-      localStorage.setItem('xml-converter-config', JSON.stringify(config));
+      localStorage.setItem('xml-converter-config', JSON.stringify(configWithTimestamp));
       return true;
     }
 
-    await storage.set({ 'xml-converter-config': config });
+    await storage.set({ 'xml-converter-config': configWithTimestamp });
+    console.log('Configuración guardada:', configWithTimestamp);
     return true;
   } catch (error) {
     console.error('Error al guardar configuración:', error);
@@ -130,7 +65,7 @@ export const saveUserConfig = async (config: Record<string, any>): Promise<boole
 };
 
 // Recuperar configuración de usuario
-export const getUserConfig = async (): Promise<Record<string, any>> => {
+export const getUserConfig = async (): Promise<UserConfig> => {
   try {
     const storage = getStorageAPI();
     let result: any;
@@ -143,9 +78,37 @@ export const getUserConfig = async (): Promise<Record<string, any>> => {
       result = data['xml-converter-config'] || {};
     }
 
-    return result;
+    console.log('Configuración recuperada:', result);
+    return {
+      mapping: result.mapping || {},
+      multipleSheets: result.multipleSheets || false,
+      formatCurrency: result.formatCurrency !== undefined ? result.formatCurrency : true,
+      showAdvanced: result.showAdvanced || false,
+      lastUsed: result.lastUsed
+    };
   } catch (error) {
     console.error('Error al recuperar configuración:', error);
-    return {};
+    return {
+      mapping: {},
+      multipleSheets: false,
+      formatCurrency: true,
+      showAdvanced: false
+    };
+  }
+};
+
+// Limpiar toda la configuración (útil para reset)
+export const clearUserConfig = async (): Promise<void> => {
+  try {
+    const storage = getStorageAPI();
+    if (!storage) {
+      localStorage.removeItem('xml-converter-config');
+      return;
+    }
+
+    await storage.remove('xml-converter-config');
+    console.log('Configuración limpiada');
+  } catch (error) {
+    console.error('Error al limpiar configuración:', error);
   }
 };

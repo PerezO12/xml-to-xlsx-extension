@@ -254,7 +254,7 @@ export async function generateXlsx(
   mappingProfile: Record<string, string>,
   formatCurrency: boolean = true
 ): Promise<Buffer> {
-  console.log('generateXlsx llamado con:', { dataLength: data.length, mappingProfile, formatCurrency });
+  console.log('generateXlsx llamado con:', { dataLength: data.length, mappingKeys: Object.keys(mappingProfile).length, formatCurrency });
   
   // Crear un nuevo libro de trabajo
   const workbook = XLSX.utils.book_new();
@@ -263,21 +263,36 @@ export async function generateXlsx(
   const worksheetData = prepareWorksheetData(data, mappingProfile, formatCurrency);
   
   console.log('Datos preparados para worksheet:', worksheetData.length, 'filas');
-  if (worksheetData.length > 0) {
-    console.log('Primera fila:', worksheetData[0]);
+  
+  // Si no hay datos, crear al menos una fila con headers
+  let finalWorksheetData = worksheetData;
+  if (worksheetData.length === 0 && Object.keys(mappingProfile).length > 0) {
+    console.log('No data found, creating empty row with headers');
+    const emptyRow: Record<string, any> = {};
+    Object.values(mappingProfile).forEach(columnName => {
+      emptyRow[columnName] = '';
+    });
+    finalWorksheetData = [emptyRow];
+  }
+
+  if (finalWorksheetData.length > 0) {
+    console.log('Primera fila:', finalWorksheetData[0]);
   }
 
   // Crear la hoja de cálculo
-  const worksheet = XLSX.utils.json_to_sheet(worksheetData);
+  const worksheet = XLSX.utils.json_to_sheet(finalWorksheetData);
 
-  // Ajustar el ancho de las columnas automáticamente
-  adjustColumnWidth(worksheet, worksheetData);
+  // Si hay datos, ajustar el ancho de las columnas automáticamente
+  if (finalWorksheetData.length > 0) {
+    adjustColumnWidth(worksheet, finalWorksheetData);
+  }
 
   // Agregar la hoja al libro de trabajo
   XLSX.utils.book_append_sheet(workbook, worksheet, 'NFes');
 
   // Generar el buffer del archivo XLSX
   const buffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'buffer' });
+  console.log('XLSX buffer generated, size:', buffer.length);
   return buffer;
 }
 
@@ -332,12 +347,31 @@ function prepareWorksheetData(
   mappingProfile: Record<string, string>,
   formatCurrency: boolean
 ): Record<string, any>[] {
+  console.log('prepareWorksheetData input:', { dataLength: data.length, mappingProfile });
+  
+  if (!data || data.length === 0) {
+    console.warn('No data provided to prepareWorksheetData');
+    return [];
+  }
+
+  if (!mappingProfile || Object.keys(mappingProfile).length === 0) {
+    console.warn('No mapping profile provided to prepareWorksheetData');
+    return [];
+  }
+
   const result: Record<string, any>[] = [];
 
-  data.forEach((nfe) => {
+  data.forEach((nfe, index) => {
     const row: Record<string, any> = {};
+    let hasData = false;
+    
     Object.entries(mappingProfile).forEach(([xmlPath, columnName]) => {
       let value = nfe[xmlPath];
+
+      // Si no hay valor, intentar extraerlo directamente del nfe
+      if (value === undefined || value === null) {
+        value = getValueByPath(nfe, xmlPath);
+      }
 
       // Formatear valores monetarios si es necesario
       if (formatCurrency && CAMPOS_MONEDA.includes(xmlPath) && value !== undefined && value !== null) {
@@ -346,10 +380,43 @@ function prepareWorksheetData(
         value = formatDateValue(value);
       }
 
+      // Manejar el caso donde el valor es un objeto complejo
+      if (value && typeof value === 'object' && !Array.isArray(value)) {
+        if (value._text !== undefined) {
+          value = value._text;
+        } else if (value['#text'] !== undefined) {
+          value = value['#text'];
+        } else {
+          // Si es un objeto sin _text, convertir a string
+          value = JSON.stringify(value);
+        }
+      }
+
+      // Convertir valores undefined/null a string vacío para Excel
+      if (value === undefined || value === null) {
+        value = '';
+      }
+
       row[columnName] = value;
+      
+      // Marcar que tenemos al menos un dato válido
+      if (value !== '' && value !== null && value !== undefined) {
+        hasData = true;
+      }
     });
-    result.push(row);
+    
+    // Solo agregar la fila si tiene al menos algún dato
+    if (hasData || Object.keys(row).length > 0) {
+      result.push(row);
+    } else {
+      console.warn(`Row ${index} has no valid data:`, nfe);
+    }
   });
+
+  console.log('prepareWorksheetData output:', result.length, 'rows');
+  if (result.length > 0) {
+    console.log('First output row:', result[0]);
+  }
 
   return result;
 }

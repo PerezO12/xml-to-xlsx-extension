@@ -1,43 +1,45 @@
-// Background script para manejar eventos de la extensión
-chrome.runtime.onInstalled.addListener(() => {
-  console.log('XML to XLSX Converter instalado');
-});
+// Background script optimizado para la extensión XML to XLSX Converter
+console.log('XML to XLSX Converter - Iniciado en modo página completa');
 
-// Manejar clicks en el icono de la extensión - SIEMPRE abrir página completa
-chrome.browserAction.onClicked.addListener((tab) => {
-  console.log('Icono de extensión clickeado - abriendo página completa');
-  chrome.tabs.create({
-    url: chrome.runtime.getURL('carga.html')
-  });
-});
-
-// Listener para mensajes desde cualquier página
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === 'openFullPage') {
-    chrome.tabs.create({
-      url: chrome.runtime.getURL('carga.html')
-    });
-    sendResponse({success: true});
+// Función para abrir la página completa al hacer clic en el icono
+const openFullPage = () => {
+  const url = typeof browser !== 'undefined' 
+    ? browser.runtime.getURL('carga.html')
+    : chrome.runtime.getURL('carga.html');
+    
+  if (typeof browser !== 'undefined') {
+    browser.tabs.create({ url });
+  } else {
+    chrome.tabs.create({ url });
   }
-  
-  // Esta función ya no es necesaria porque no hay popup, pero la dejamos por compatibilidad
-  if (request.action === 'checkIsPopup') {
-    // Siempre devolver false porque ya no tenemos popup
-    sendResponse({isPopup: false});
-  }
-});
+};
 
-// Código específico para Firefox
+// Event listeners optimizados
 if (typeof browser !== 'undefined') {
-  // En Firefox, usar browser.browserAction
-  browser.browserAction.onClicked.addListener((tab) => {
-    console.log('Icono de extensión clickeado en Firefox - abriendo página completa');
-    browser.tabs.create({
-      url: browser.runtime.getURL('carga.html')
-    });
+  // Firefox
+  browser.runtime.onInstalled.addListener(() => {
+    console.log('XML to XLSX Converter instalado en Firefox');
+  });
+  
+  browser.browserAction.onClicked.addListener(() => {
+    console.log('Abriendo página completa en Firefox');
+    openFullPage();
   });
   
   browser.runtime.onStartup.addListener(() => {
     console.log('Extensión iniciada en Firefox');
   });
+} else {
+  // Chrome/Chromium
+  chrome.runtime.onInstalled.addListener(() => {
+    console.log('XML to XLSX Converter instalado en Chrome');
+  });
+  
+  chrome.browserAction.onClicked.addListener(() => {
+    console.log('Abriendo página completa en Chrome');
+    openFullPage();
+  });
 }
+
+// Cleanup - remover código innecesario del popup
+// Ya no necesitamos manejar mensajes del popup porque solo usamos página completa
